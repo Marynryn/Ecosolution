@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "ecosolution",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Marynryn.github.io/babysitters/",
+  "homepage": "https://Marynryn.github.io/ecosolution/",
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@mui/material": "^5.15.14",
@@ -38,6 +38,7 @@
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "stream-browserify": "^3.0.0",
+    "styled-components": "^6.1.11",
     "tailwindcss": "^3.4.3",
     "url": "^0.11.3",
     "web-vitals": "^2.1.3",

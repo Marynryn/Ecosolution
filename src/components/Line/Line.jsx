@@ -1,8 +1,16 @@
 import React from 'react'
+import styled from 'styled-components';
 
-export const Line = () => {
+
+const StyledLine = styled.div`
+  background: ${props => props.color || '#97D28B'};
+  height: ${props => props.height || '1px'};
+  width: ${props => props.width || '100%'};
+`;
+
+const Line = ({ width, height, color }) => {
     return (
-        <div className='bg-gray hidden xl:flex items-center ' style={{ margin: "0 16px", height: "16px", width: "1px" }}></div>
-    )
+        <StyledLine width={width} height={height} color={color}></StyledLine>
+    );
 }
 export default Line;

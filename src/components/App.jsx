@@ -1,23 +1,31 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
-import { Layout } from './Layout';
-import { lazy } from 'react';
-import PrivateRoute from './PrivateRoute';
+import styled from "styled-components";
+
+import Header from "./Header/Header";
+import { useState } from "react";
+import Modal from "./Modal/Modal";
 
 
-const Home = lazy(() => import('../pages/Home/Home'));
-const Nannies = lazy(() => import('../pages/Nannies/Nannies'));
-const Favorites = lazy(() => import('../pages/Favorites/Favorites'));
+
+const Container = styled.div`
+  padding: 36px 20px 24px 20px;
+  @media (min-width: 768px) {
+    padding: 36px 30px 40px 30px
+;  }
+ @media (min-width: 1280px) {
+    padding: 24px 100px 40px 100px
+;  }
+`;
+
 export const App = () => {
-
+  const [modalOpen, setModalOpen] = useState(false)
   return (
-
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/nannies" element={<Nannies />} />
-        <Route path="/favorites" element={<PrivateRoute redirectTo="/" component={Favorites} />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Route>
-    </Routes>
+    <Container>
+      <Header setModalOpen={setModalOpen} modalOpen={modalOpen} />
+      {modalOpen && (
+        <Modal onClose={() => setModalOpen(false)}>
+          {/* <ModalMenu /> */}
+        </Modal>
+      )}
+    </Container>
   );
 };
