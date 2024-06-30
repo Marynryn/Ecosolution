@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ecosolution/static/css/main.4548b53c.css",
+    "main.js": "/ecosolution/static/js/main.000cf869.js",
+    "static/media/symbol-defs.svg": "/ecosolution/static/media/symbol-defs.142274e57e3d5700d553c925975832d9.svg",
+    "index.html": "/ecosolution/index.html",
+    "main.4548b53c.css.map": "/ecosolution/static/css/main.4548b53c.css.map",
+    "main.000cf869.js.map": "/ecosolution/static/js/main.000cf869.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4548b53c.css",
+    "static/js/main.000cf869.js"
+  ]
+}
