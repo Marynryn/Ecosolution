@@ -1,9 +1,11 @@
 import Logo from 'components/Logo/Logo';
 import React from 'react'
 import styled from 'styled-components';
-import sprite from "../../svg/symbol-defs.svg"
+import sprite from "../../svg/symbol-defs.svg";
+
 const Container = styled.header`
     display: flex;
+    background-color:var(--background);
     justify-content: space-between;
     padding: 36px 20px 20px 20px;
       position: fixed;
@@ -30,6 +32,7 @@ const BurgerButton = styled.button`
    align-items: center;
    justify-content: center;
    padding: 0;
+   outline: none;
    &:hover{
     background-color: var(--accent-color);
 }
@@ -51,6 +54,7 @@ const Header = ({ setModalOpen, modalOpen }) => {
                     <use href={`${sprite}#icon-menu`} />
                 </StyledSvg>
             </BurgerButton>
+
         </Container>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import sprite from "../../svg/symbol-defs.svg"
 import Line from 'components/Line/Line';
@@ -23,6 +23,7 @@ const ModalContent = styled.div`
   padding: 24px;
 margin: 36px 20px;
  width: 272px;
+ height: calc(100vh - 120px);
   overflow-y: auto;
   position: relative;
 `;
@@ -44,10 +45,33 @@ font-weight: 400;
 
 `;
 const Modal = ({ onClose, children }) => {
+
+    const handleCloseModal = useCallback(() => {
+        onClose(false);
+    }, [onClose]);
+
+    const handleBackdropClick = event => {
+        if (event.currentTarget === event.target) {
+            handleCloseModal();
+        }
+    };
+
+    useEffect(() => {
+        const handleKeyDown = e => {
+            if (e.code === 'Escape') {
+                handleCloseModal();
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [handleCloseModal]);
     return (
-        <ModalBackdrop onClick={onClose}>
-            <ModalContent onClick={e => e.stopPropagation()}>
-                <CloseButton onClick={onClose}>
+        <ModalBackdrop onClick={handleBackdropClick}>
+            <ModalContent >
+                <CloseButton onClick={handleCloseModal}>
                     <svg width={20} height={20} style={{ stroke: "var(--white)", marginTop: "3px" }}>
                         <use href={`${sprite}#icon-x`} />
                     </svg>

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Header from "./Header/Header";
 import { useState } from "react";
 import Modal from "./Modal/Modal";
+import ModalMenu from "./ModalMenu/ModalMenu";
+import MainContent from "./MainContent/MainContent";
 
 
 
@@ -17,13 +19,16 @@ const Container = styled.div`
 `;
 
 export const App = () => {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <Container>
       <Header setModalOpen={setModalOpen} modalOpen={modalOpen} />
+      <MainContent />
+      {/* <Footer /> */}
       {modalOpen && (
         <Modal onClose={() => setModalOpen(false)}>
-          {/* <ModalMenu /> */}
+          <ModalMenu />
         </Modal>
       )}
     </Container>
