@@ -5,7 +5,7 @@ import React from 'react'
 import styled from 'styled-components';
 import heroImage from "img/mobile/wind-turbine-clean-energy.png"
 
-const Title = styled.h1`
+const Title = styled.h2`
    font-size: 36px;
 font-style: normal;
 font-weight: 400;

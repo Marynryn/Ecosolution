@@ -1,4 +1,7 @@
 import About from 'components/About/About';
+import Cases from 'components/Cases/Cases';
+import Electricity from 'components/Electricity/Electricity';
+import Faq from 'components/Faq/Faq';
 import Main from 'components/Main/Main';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
@@ -14,6 +17,7 @@ const Section = styled.section`
 `;
 
 const MainContent = () => {
+
     const casesRef = useRef(null);
 
     const scrollToCases = () => {
@@ -28,13 +32,14 @@ const MainContent = () => {
             <Section id="about">
                 <About />
             </Section>
+            <Section id="electricity">
+                <Electricity />
+            </Section>
             <Section id="cases" ref={casesRef}>
-                <h2>Our Services</h2>
-                <p>This is the services section.</p>
+                <Cases />
             </Section>
             <Section id="faq">
-                <h2>Contact Us</h2>
-                <p>This is the contact section.</p>
+                <Faq />
             </Section>
         </MainWrapper>
     );

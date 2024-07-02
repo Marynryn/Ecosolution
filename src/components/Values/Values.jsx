@@ -14,33 +14,44 @@ const ValuesContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
   gap: 24px;
   width: 100%;
-  margin: 0 auto;
+  margin: 36px auto 0;
 `;
 
 const ValueItem = styled.div`
  background-color: var(--accent-background);
-  padding: 20px;
-  
+  padding: 13px 12px 12px;
+  height:172px;
  
   text-align: center;
 `;
 
 const ValueTitle = styled.h3`
-  margin: 0 0 10px;
-  font-size: 1.5em;
-  color: #388e3c;
+ font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; 
+text-transform: uppercase;
+
 `;
 
 const ValueDescription = styled.p`
-  margin: 0;
-  font-size: 1em;
-  color: #555;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+text-align: justify;
+letter-spacing: -0.56px;
+margin: 12px 0 0 0;
 `;
 const StyledSvg = styled.svg`
+stroke:var(--main-color);
+fill: transparent;
 `;
 const Container = styled.div`
 display: flex;
-gap:8px;`;
+gap:8px;
+margin-bottom: 33px;
+align-items: center;
+`;
 const Values = () => {
     return (
         <ValuesContainer>
