@@ -1,5 +1,5 @@
 import React from 'react'
-import sprite from '../../svg/symbol-defs.svg';
+
 import styled from 'styled-components';
 import Paragraph from 'components/Paragraph/Paragraph';
 import SvgContainer from 'components/SvgContainer/SvgContainer';

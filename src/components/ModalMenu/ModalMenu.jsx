@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import sprite from '../../svg/symbol-defs.svg';
+import SocialIcons from 'components/SocialIcons/SocialIcons';
 
 const Navigation = styled.nav`
   margin-top: 16px;
@@ -11,11 +12,11 @@ const Navigation = styled.nav`
 `;
 
 const navItems = [
-    { name: 'Main', id: 'main' },
-    { name: 'About', id: 'about' },
-    { name: 'Cases', id: 'cases' },
-    { name: 'FAQ', id: 'faq' },
-    { name: 'Contact Us', id: 'contact' },
+  { name: 'Main', id: 'main' },
+  { name: 'About', id: 'about' },
+  { name: 'Cases', id: 'cases' },
+  { name: 'FAQ', id: 'faq' },
+  { name: 'Contact Us', id: 'contact' },
 ];
 
 const NavigationList = styled.ul`
@@ -36,11 +37,13 @@ const StyledLink = styled.a`
   font-size: 24px;
   font-weight: 400;
   letter-spacing: -0.96px;
-  
+  opacity: 0.25;
   &:hover {
-    color: var(--accent-color);
+    color: var(--white);
+    opacity: 1;
        svg {
-      stroke: var(--accent-color);
+      stroke: var(--white);
+      opacity: 1;
     }
   }
 `;
@@ -55,19 +58,7 @@ stroke:var(--white);
     stroke: var(--accent-color);
   }
 `;
-const SocialIcon = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  fill: var(--white);
-  transition: fill 0.3s;
 
-  &:hover {
-    fill: var(--accent-color);
-  }
-`;
 const ModalFooter = styled.footer`
   display: flex;
   justify-content: start;
@@ -76,45 +67,29 @@ const ModalFooter = styled.footer`
 margin-top: auto; 
   margin-bottom: 0;
 `;
-const StyledIcon = styled.svg`
-fill:transparent;
-stroke:var(--white);
- stroke-width: 2;
-    &:hover {
-    stroke: var(--accent-color);
-  } 
-`;
+
 
 const ModalMenu = () => {
-    return (
-        <Navigation>
-            <NavigationList>
-                {navItems.map((el, index) => (
-                    <NavigationItem key={index}>
-                        <StyledLink href={`#${el.id}`}>
-                            {el.name}
-                            <StyledSvg width={16} height={16}>
-                                <use href={`${sprite}#icon-arrow-right-2`} width={16} height={16} />
-                            </StyledSvg>
-                        </StyledLink>
-                    </NavigationItem>
-                ))}
-            </NavigationList>
-            <ModalFooter>
-                <SocialIcon href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-                    <StyledIcon width={24} height={24}>
-                        <use href={`${sprite}#icon-facebook`} />
-                    </StyledIcon>
-                </SocialIcon>
-                <SocialIcon href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <StyledIcon width={24} height={24}>
-                        <use href={`${sprite}#icon-instagram`} />
-                    </StyledIcon>
-                </SocialIcon>
+  return (
+    <Navigation>
+      <NavigationList>
+        {navItems.map((el, index) => (
+          <NavigationItem key={index}>
+            <StyledLink href={`#${el.id}`}>
+              {el.name}
+              <StyledSvg width={16} height={16}>
+                <use href={`${sprite}#icon-arrow-right-2`} width={16} height={16} />
+              </StyledSvg>
+            </StyledLink>
+          </NavigationItem>
+        ))}
+      </NavigationList>
+      <ModalFooter>
 
-            </ModalFooter>
-        </Navigation>
-    );
+        <SocialIcons />
+      </ModalFooter>
+    </Navigation>
+  );
 };
 
 export default ModalMenu;

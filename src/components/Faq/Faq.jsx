@@ -1,13 +1,46 @@
+
 import Line from 'components/Line/Line';
 import QuestionAnswer from 'components/QuestionAnswer/QuestionAnswer';
 import Subtitle from 'components/Subtitle/Subtitle';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const FAQContainer = styled.div`
+import Paragraph from 'components/Paragraph/Paragraph';
+import Button from 'components/Button/Button';
 
+const FAQContainer = styled.div`
   margin: 0 auto;
  
+`;
+const Text = styled.p`
+  margin: 0 ;
+ font-size: 18px;
+font-style: normal;
+font-weight: 400;
+letter-spacing: -0.72px;
+`;
+const List = styled.ul`
+  margin: 0;
+  text-decoration: none;
+ margin-bottom: 36px;
+`;
+const Item = styled.li`
+  margin: 0 auto;
+ 
+`;
+const ButtonBox = styled.div`
+  margin: 12px auto;
+ width: 130px;
+`;
+const Circle = styled.div`
+ border-radius: 100%;
+ width: 14px;
+height: 14px;
+background-color: var(--main-color);
+ &:hover{
+    background-color: var(--accent-color);
+    
+ }
 `;
 
 const questionsAndAnswers = [
@@ -33,7 +66,7 @@ const questionsAndAnswers = [
     },
 ];
 
-const Faq = () => {
+const Faq = ({ scrollToContact }) => {
     const [openIndex, setOpenIndex] = useState(0);
 
     const handleToggle = (index) => {
@@ -46,17 +79,22 @@ const Faq = () => {
                 <Subtitle>Frequently Asked Questions</Subtitle>
             </div>
             <Line />
-            {questionsAndAnswers.map((item, index) => (
-                <React.Fragment key={index}>
-                    <QuestionAnswer
-                        question={item.question}
-                        answer={item.answer}
-                        isVisible={openIndex === index}
-                        onClick={() => handleToggle(index)}
-                    />
-                    <Line />
-                </React.Fragment>
-            ))}
+            <List>
+                {questionsAndAnswers.map((item, index) => (
+                    <Item key={index}>
+                        <QuestionAnswer
+                            question={item.question}
+                            answer={item.answer}
+                            isVisible={openIndex === index}
+                            onClick={() => handleToggle(index)}
+                        />
+                        <Line />
+                    </Item>
+                ))}</List>
+            <Text>Didn't find the answer to your question? </Text>
+            <ButtonBox><Button onClick={scrollToContact}><Paragraph>Contact Us</Paragraph>
+                <Circle></Circle>
+            </Button></ButtonBox>
         </FAQContainer>
     );
 };

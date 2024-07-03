@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import sprite from "../../svg/symbol-defs.svg"
 import Line from 'components/Line/Line';
+
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -36,6 +37,20 @@ margin-bottom: 8px;
   align-items: center;
   padding:0;
  margin-left: -5px;
+ &:hover{
+    p{color:var(--accent-color);}
+    
+    svg{
+        stroke: var(--accent-color);
+    }
+ }
+`;
+const StyledSvg = styled.svg`
+    stroke: var(--white);
+margin-top: 3px;
+ &:hover{
+     stroke: var(--accent-color);
+ }
 `;
 const WordClose = styled.p`
      color:var(--white);
@@ -72,9 +87,9 @@ const Modal = ({ onClose, children }) => {
         <ModalBackdrop onClick={handleBackdropClick}>
             <ModalContent >
                 <CloseButton onClick={handleCloseModal}>
-                    <svg width={20} height={20} style={{ stroke: "var(--white)", marginTop: "3px" }}>
+                    <StyledSvg width={20} height={20} >
                         <use href={`${sprite}#icon-x`} />
-                    </svg>
+                    </StyledSvg>
                     <WordClose>close</WordClose>
                 </CloseButton>
                 <Line color={"var(--white)"} />

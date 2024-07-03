@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 import Header from "./Header/Header";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Modal from "./Modal/Modal";
 import ModalMenu from "./ModalMenu/ModalMenu";
 import MainContent from "./MainContent/MainContent";
+import Footer from "./Footer/Footer";
 
 
 
@@ -20,12 +21,15 @@ const Container = styled.div`
 
 export const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
-
+  const mainRef = useRef(null);
+  const scrollToMain = () => {
+    mainRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <Container>
       <Header setModalOpen={setModalOpen} modalOpen={modalOpen} />
-      <MainContent />
-      {/* <Footer /> */}
+      <MainContent mainRef={mainRef} />
+      <Footer scrollToMain={scrollToMain} />
       {modalOpen && (
         <Modal onClose={() => setModalOpen(false)}>
           <ModalMenu />
