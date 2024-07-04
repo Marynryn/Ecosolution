@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import sprite from '../../svg/symbol-defs.svg';
 
 const Container = styled.div`
@@ -30,11 +30,9 @@ const Answer = styled.p`
   font-weight: 400;
   letter-spacing: -0.56px;
 
-  ${({ isvisible }) =>
-    isvisible &&
-    css`
-      display: block;
-    `}
+  &.active {
+    display: block;
+  }
 `;
 
 const Icon = styled.div`
@@ -51,20 +49,22 @@ const StyledSvg = styled.svg`
   height: 16px;
 `;
 
-const QuestionAnswer = ({ question, answer, isvisible, onClick }) => {
+const QuestionAnswer = ({ question, answer, isVisible, onClick }) => {
   return (
     <Container>
       <Question onClick={onClick}>
         <Icon>
           <StyledSvg>
-            <use href={`${sprite}#${isvisible ? 'icon-minus' : 'icon-plus'}`} />
+            <use href={`${sprite}#${isVisible ? 'icon-minus' : 'icon-plus'}`} />
           </StyledSvg>
         </Icon>
         <Text>{question}</Text>
       </Question>
-      <Answer isvisible={isvisible}>{answer}</Answer>
+      <Answer className={isVisible ? 'active' : ''}>{answer}</Answer>
     </Container>
   );
 };
 
 export default QuestionAnswer;
+
+
