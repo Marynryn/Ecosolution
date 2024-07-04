@@ -31,7 +31,14 @@ const Text = styled.p`
 const Span = styled.span`
   color: var(--backdrop-color);
 `;
-
+const StyledSlider = styled(Slider)`
+  .slick-prev::before {
+    display: none ; 
+  }
+   .slick-next::before {
+    display: none ; 
+  }
+`;
 const cases = [
     { id: "01", img: img01, city: "Lviv Region, Radekhiv town", title: "Private Enterprise “ZAKHIDNYI BUH”", description: "Wind Power for auto field irrigation", date: "July 2023" },
     { id: "02", img: img02, city: "Zhytomyr city", title: "Private Enterprise “Bosch”", description: "Solar Panels for industrial use", date: "November 2023" },
@@ -68,7 +75,8 @@ const Cases = () => {
                     slidesToScroll: 1
                 }
             }
-        ]
+        ],
+        dots: false
     };
 
     const nextSlide = () => {
@@ -89,11 +97,11 @@ const Cases = () => {
                 <ScrollButtons onNext={nextSlide} onPrev={prevSlide} />
             </Container>
 
-            <Slider ref={sliderRef} {...settings}>
+            <StyledSlider ref={sliderRef} {...settings}>
                 {cases.map(caseItem => (
                     <SlideItem key={caseItem.id} props={caseItem} onNext={nextSlide} />
                 ))}
-            </Slider>
+            </StyledSlider>
         </ContainerCases>
     );
 }

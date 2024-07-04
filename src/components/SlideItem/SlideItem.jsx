@@ -19,11 +19,19 @@ const Button = styled.div`
  }
 `;
 const Image = styled.img`
-  width: 320px;
+  
+  width: 100%;
   height: 160px;
 `;
 const Container = styled.div`
   padding: 21px 12px 12px;
+ 
+`;
+const Box = styled.div`
+  width: 100%;
+  margin: 24px auto 0;
+  background-color: var(--accent-background);
+  
 `;
 const ItemContainer = styled.div`
   margin-bottom: 21px;
@@ -57,7 +65,7 @@ const Text = styled.p`
 
 const SlideItem = ({ props, onNext }) => {
   return (
-    <div style={{ backgroundColor: "var(--accent-background)", marginTop: "24px" }}>
+    <Box >
       <Image src={`${props.img}`} alt={props.description} />
       <Container>
         <ItemContainer>
@@ -74,7 +82,7 @@ const SlideItem = ({ props, onNext }) => {
           <Text>{props.date}</Text>
         </TextContainer>
       </Container>
-    </div>
+    </Box>
   );
 }
 
