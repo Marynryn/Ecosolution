@@ -6,6 +6,7 @@ import Modal from "./Modal/Modal";
 import ModalMenu from "./ModalMenu/ModalMenu";
 import MainContent from "./MainContent/MainContent";
 import Footer from "./Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -35,6 +36,7 @@ export const App = () => {
           <ModalMenu />
         </Modal>
       )}
+      <Toaster position="top-right" reverseOrder={false} />
     </Container>
   );
 };

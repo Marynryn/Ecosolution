@@ -56,26 +56,26 @@ const Text = styled.p`
 `;
 
 const SlideItem = ({ props, onNext }) => {
-    return (
-        <div style={{ backgroundColor: "var(--accent-background)", marginTop: "24px" }}>
-            <Image src={`${props.img}`} alt={props.description} />
-            <Container>
-                <ItemContainer>
-                    <TitleContainer>
-                        <Title>{props.city} {props.title}</Title>
-                    </TitleContainer>
-                    <Button onClick={onNext} type='button'>
-                        <SvgContainer svgId={"icon-arrow-right-2"} svgSize={28} backgroundColor={'transparent'} padding={16} />
-                    </Button>
-                </ItemContainer>
-                <Line />
-                <TextContainer>
-                    <Text>{props.description}</Text>
-                    <Text>{props.date}</Text>
-                </TextContainer>
-            </Container>
-        </div>
-    );
+  return (
+    <div style={{ backgroundColor: "var(--accent-background)", marginTop: "24px" }}>
+      <Image src={`${props.img}`} alt={props.description} />
+      <Container>
+        <ItemContainer>
+          <TitleContainer>
+            <Title>{props.city} {props.title}</Title>
+          </TitleContainer>
+          <Button onClick={onNext} type='button'>
+            <SvgContainer svgId="icon-arrow-right-2" size="28px" backgroundColor='transparent' padding="16px" />
+          </Button>
+        </ItemContainer>
+        <Line />
+        <TextContainer>
+          <Text>{props.description}</Text>
+          <Text>{props.date}</Text>
+        </TextContainer>
+      </Container>
+    </div>
+  );
 }
 
 export default SlideItem;

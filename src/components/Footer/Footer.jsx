@@ -1,6 +1,6 @@
 import Line from 'components/Line/Line';
 import Logo from 'components/Logo/Logo';
-import Paragraph from 'components/Paragraph/Paragraph';
+
 import SocialIcons from 'components/SocialIcons/SocialIcons';
 import SvgContainer from 'components/SvgContainer/SvgContainer';
 import React from 'react'

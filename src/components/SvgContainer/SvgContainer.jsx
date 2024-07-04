@@ -5,24 +5,24 @@ import sprite from '../../svg/symbol-defs.svg';
 const StyledSvg = styled.svg`
     stroke: var(--main-color);
     fill: transparent;
-    width: ${({ svgSize }) => svgSize}px;
-    height: ${({ svgSize }) => svgSize}px;
+    width: ${({ size }) => size};
+    height: ${({ size }) => size};
 `;
 
 const ContainerSvg = styled.div`
     border-radius: 100px;
-    
-    background-color: ${({ backgroundColor }) => backgroundColor};
+    background-color: ${({ backgroundcolor }) => backgroundcolor};
     display: flex;
-    padding: ${({ padding }) => padding || 8}px;
+    padding: ${({ padding }) => padding};
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 `;
 
-const SvgContainer = ({ svgId, svgSize = 16, backgroundColor = 'var(--accent-color)', padding, onClick }) => {
+const SvgContainer = ({ svgId = "icon-arrow-left", size = "16px", backgroundColor = 'var(--accent-color)', padding = "8px", onClick }) => {
     return (
-        <ContainerSvg backgroundColor={backgroundColor} padding={padding} onClick={onClick}>
-            <StyledSvg svgSize={svgSize}>
+        <ContainerSvg backgroundcolor={backgroundColor} padding={padding} onClick={onClick}>
+            <StyledSvg size={size}>
                 <use href={`${sprite}#${svgId}`} />
             </StyledSvg>
         </ContainerSvg>

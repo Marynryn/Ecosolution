@@ -21,7 +21,6 @@ const Question = styled.div`
   text-align: justify;
   cursor: pointer;
   letter-spacing: -0.72px;
-
 `;
 
 const Answer = styled.p`
@@ -32,9 +31,11 @@ const Answer = styled.p`
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.56px;
-  ${props => props.isVisible && css`
-    display: block;
-  `}
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      display: block;
+    `}
 `;
 
 const Icon = styled.div`
@@ -52,27 +53,27 @@ const StyledSvg = styled.svg`
 `;
 
 const QuestionAnswer = ({ question, answer, isVisible, onClick }) => {
-    return (
-        <Container>
-            <Question onClick={onClick}>
 
-                <Icon>
-                    {isVisible ? (
-                        <StyledSvg>
-                            <use href={`${sprite}#icon-minus`} />
-                        </StyledSvg>
-                    ) : (
-                        <StyledSvg>
-                            <use href={`${sprite}#icon-plus`} />
-                        </StyledSvg>
-                    )}
-                </Icon>
-                <Text>{question}</Text>
-            </Question>
-            <Answer isVisible={isVisible}>{answer}</Answer>
-        </Container>
-    );
+  return (
+    <Container>
+      <Question onClick={onClick}>
+
+        <Icon>
+          {isVisible ? (
+            <StyledSvg>
+              <use href={`${sprite}#icon-minus`} />
+            </StyledSvg>
+          ) : (
+            <StyledSvg>
+              <use href={`${sprite}#icon-plus`} />
+            </StyledSvg>
+          )}
+        </Icon>
+        <Text>{question}</Text>
+      </Question>
+      <Answer isVisible={isVisible}>{answer}</Answer>
+    </Container>
+  );
 };
 
 export default QuestionAnswer;
-

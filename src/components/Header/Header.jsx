@@ -9,12 +9,14 @@ const Container = styled.header`
     justify-content: space-between;
     padding: 36px 20px 20px 20px;
       position: fixed;
+    z-index:5;   
     top: 0;
     left: 0;
     width: calc(100% - 40px);
     @media (min-width: 768px) {
     padding: 36px 30px 40px 30px;
     width: calc(100% - 60px);
+   
 ;  }
  @media (min-width: 1280px) {
     padding: 24px 100px 20px 100px;

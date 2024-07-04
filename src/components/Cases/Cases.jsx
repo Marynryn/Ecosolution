@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SlideItem from 'components/SlideItem/SlideItem';
 
+
 const ContainerCases = styled.div`
   text-align: left;
 `;
@@ -44,6 +45,7 @@ const Cases = () => {
     const [currentSlide, setCurrentSlide] = useState(1);
 
     const settings = {
+        zIndex: 1,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -86,6 +88,7 @@ const Cases = () => {
                 <Text>0{currentSlide} <Span>/05</Span></Text>
                 <ScrollButtons onNext={nextSlide} onPrev={prevSlide} />
             </Container>
+
             <Slider ref={sliderRef} {...settings}>
                 {cases.map(caseItem => (
                     <SlideItem key={caseItem.id} props={caseItem} onNext={nextSlide} />

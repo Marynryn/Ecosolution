@@ -1,4 +1,5 @@
 import Address from 'components/Address/Address';
+import ContactForm from 'components/ContactForm/ContactForm';
 import Email from 'components/Email/Email';
 import Phone from 'components/Phone/Phone';
 import { SocialNetworks } from 'components/SocialNetworks/SocialNetworks';
@@ -21,7 +22,7 @@ const ContactUs = () => {
                 <Address />
                 <SocialNetworks />
 
-
+                <ContactForm />
             </ContactBox>
         </div>
     )

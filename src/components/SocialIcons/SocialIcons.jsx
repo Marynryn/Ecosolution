@@ -9,7 +9,7 @@ const StyledIcon = styled.svg`
   transition: stroke 0.3s;
 
   &:hover {
-    stroke: ${({ hoverStroke }) => hoverStroke || 'var(--accent-color)'};
+    stroke: ${({ hover }) => hover || 'var(--accent-color)'};
   }
 `;
 
@@ -27,11 +27,11 @@ const SocialButton = styled.button`
   transition: fill 0.3s;
 
   &:hover {
-    fill: ${({ hoverFill }) => hoverFill || 'var(--accent-color)'};
+    fill: ${({ hover }) => hover || 'var(--accent-color)'};
   }
 
   &:focus {
-    outline: 2px solid ${({ hoverFill }) => hoverFill || 'var(--accent-color)'};
+    outline: 2px solid ${({ hover }) => hover || 'var(--accent-color)'};
     outline-offset: 2px;
   }
 `;
@@ -45,20 +45,19 @@ const SocialIcons = ({ props = {} }) => {
     const {
         fill = 'var(--white)',
         stroke = 'var(--white)',
-        hoverFill = 'var(--accent-color)',
-        hoverStroke = 'var(--accent-color)',
+        hover = 'var(--accent-color)',
         gap = '8px',
     } = props;
 
     return (
         <SocialContainer gap={gap}>
-            <SocialButton as="a" href="https://www.facebook.com" target="_blank" aria-label="Facebook" fill={fill} hoverFill={hoverFill}>
-                <StyledIcon width={24} height={24} stroke={stroke} hoverStroke={hoverStroke}>
+            <SocialButton as="a" href="https://www.facebook.com" target="_blank" aria-label="Facebook" fill={fill} hover={hover}>
+                <StyledIcon width={24} height={24} stroke={stroke} hover={hover}>
                     <use href={`${sprite}#icon-facebook`} />
                 </StyledIcon>
             </SocialButton>
-            <SocialButton as="a" href="https://www.instagram.com" target="_blank" aria-label="Instagram" fill={fill} hoverFill={hoverFill}>
-                <StyledIcon width={24} height={24} stroke={stroke} hoverStroke={hoverStroke}>
+            <SocialButton as="a" href="https://www.instagram.com" target="_blank" aria-label="Instagram" fill={fill} hover={hover}>
+                <StyledIcon width={24} height={24} stroke={stroke} hover={hover}>
                     <use href={`${sprite}#icon-instagram`} />
                 </StyledIcon>
             </SocialButton>

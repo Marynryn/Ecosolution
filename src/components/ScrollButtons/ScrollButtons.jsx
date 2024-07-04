@@ -26,10 +26,11 @@ const ScrollButtons = ({ onNext, onPrev }) => {
     return (
         <Container>
             <Button onClick={onPrev} type='button'>
-                <SvgContainer svgId={"icon-arrow-left"} svgSize={36} backgroundColor={'transparent'} padding={15} />
+                <SvgContainer svgId="icon-arrow-left" size="36px" backgroundColor="transparent" padding="15px" />
+
             </Button>
             <Button onClick={onNext} type='button'>
-                <SvgContainer svgId={"icon-arrow-right"} svgSize={36} backgroundColor={'transparent'} padding={15} />
+                <SvgContainer svgId="icon-arrow-right" size="36px" backgroundColor="transparent" padding="15px" />
             </Button>
 
 

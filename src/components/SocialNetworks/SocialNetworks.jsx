@@ -7,7 +7,7 @@ export const SocialNetworks = () => {
         <div>
             <Paragraph>Social Networks:</Paragraph>
             <div style={{ marginTop: "8px" }}>
-                <SocialIcons props={{ gap: "32px", fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} /></div>
+                <SocialIcons props={{ gap: "32px", fill: "var(--main-color)", stroke: "var(--main-color)", hover: "var(--accent-color)", }} /></div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { Box, StyledSvg, Text } from 'components/Phone/Phone';
+import { StyledSvg, Text } from 'components/Phone/Phone';
 import React from 'react';
 import sprite from "../../svg/symbol-defs.svg";
 import Paragraph from 'components/Paragraph/Paragraph';
