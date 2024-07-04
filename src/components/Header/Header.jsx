@@ -5,14 +5,18 @@ import sprite from "../../svg/symbol-defs.svg";
 
 const Container = styled.header`
     display: flex;
-    background-color: ${props => props.isScrolled ? 'var(--white)' : 'var(--background)'};
     justify-content: space-between;
-    padding: 36px  20px;
+    padding: 36px 20px;
     position: fixed;
     z-index: 5;   
     top: 0;
     left: 0;
     width: calc(100% - 40px);
+    transition: background-color 0.3s ease; 
+
+    &.scrolled {
+        background-color: var(--white);
+    }
 
     @media (min-width: 768px) {
         padding: 36px 30px 40px 30px;
@@ -52,7 +56,7 @@ const Header = ({ setModalOpen, modalOpen }) => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset;
-            const scrollThreshold = 20; // Adjust as needed
+            const scrollThreshold = 20;
             setIsScrolled(scrollTop > scrollThreshold);
         };
 
@@ -66,8 +70,10 @@ const Header = ({ setModalOpen, modalOpen }) => {
         setModalOpen(!modalOpen);
     };
 
+    const containerClass = isScrolled ? 'scrolled' : '';
+
     return (
-        <Container isScrolled={isScrolled}>
+        <Container className={containerClass}>
             <Logo />
             <BurgerButton onClick={toggleModal}>
                 <StyledSvg width={16} height={16}>
