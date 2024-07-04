@@ -1,14 +1,24 @@
 {
   "files": {
-    "main.css": "/ecosolution/static/css/main.4548b53c.css",
-    "main.js": "/ecosolution/static/js/main.000cf869.js",
-    "static/media/symbol-defs.svg": "/ecosolution/static/media/symbol-defs.142274e57e3d5700d553c925975832d9.svg",
+    "main.css": "/ecosolution/static/css/main.7f61e9bd.css",
+    "main.js": "/ecosolution/static/js/main.35b40102.js",
+    "static/media/02.png": "/ecosolution/static/media/02.7596b9f370304a4c1a4e.png",
+    "static/media/03.png": "/ecosolution/static/media/03.00ef0eca7f971a2b75d8.png",
+    "static/media/05.png": "/ecosolution/static/media/05.f7452747d4b4d020ac37.png",
+    "static/media/04.png": "/ecosolution/static/media/04.0de69296c1577eab75f0.png",
+    "static/media/wind-turbine-clean-energy.png": "/ecosolution/static/media/wind-turbine-clean-energy.47d9b8dc98bebc40b77f.png",
+    "static/media/01.png": "/ecosolution/static/media/01.f67431c26acdd96801fa.png",
+    "static/media/symbol-defs.svg": "/ecosolution/static/media/symbol-defs.ca3850681b8c097d0b92594408e11a51.svg",
+    "static/media/slick.svg": "/ecosolution/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/ecosolution/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/ecosolution/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/ecosolution/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ecosolution/index.html",
-    "main.4548b53c.css.map": "/ecosolution/static/css/main.4548b53c.css.map",
-    "main.000cf869.js.map": "/ecosolution/static/js/main.000cf869.js.map"
+    "main.7f61e9bd.css.map": "/ecosolution/static/css/main.7f61e9bd.css.map",
+    "main.35b40102.js.map": "/ecosolution/static/js/main.35b40102.js.map"
   },
   "entrypoints": [
-    "static/css/main.4548b53c.css",
-    "static/js/main.000cf869.js"
+    "static/css/main.7f61e9bd.css",
+    "static/js/main.35b40102.js"
   ]
 }
