@@ -9,6 +9,7 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: -0.62px;
 margin:0;
+
 `;
 const Paragraph = ({ children }) => {
     return (

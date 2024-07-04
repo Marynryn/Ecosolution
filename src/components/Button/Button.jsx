@@ -16,7 +16,7 @@ align-items: center;
 gap: 12px;
 font-size: 16px;
 letter-spacing: -0.64px;
-margin: 12px auto 0;
+margin: 0 auto ;
 &:hover{
     
     background-color: var(--main-color);

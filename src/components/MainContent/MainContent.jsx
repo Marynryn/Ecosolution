@@ -10,23 +10,27 @@ import styled from 'styled-components';
 const MainWrapper = styled.main`
  
   text-align: center; 
-  margin-top: 226px;
+  margin-top: 190px;
+  @media (min-width: 768px) {
+    margin-top: 208px;
+  }
 `;
 
 const Section = styled.section`
  margin-bottom: 36px;
+ scroll-margin-top: 148px;
+  @media (min-width: 768px){
+     margin-bottom: 100px;
+  }
 `;
 
-const MainContent = ({ mainRef }) => {
+const MainContent = ({ mainRef, scrollToContact, contactRef }) => {
 
     const casesRef = useRef(null);
-    const contactRef = useRef(null);
+
 
     const scrollToCases = () => {
         casesRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-    const scrollToContact = () => {
-        contactRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (

@@ -13,6 +13,7 @@ justify-content: space-between;
 margin-top: 24px;
 align-items: center;
 `;
+
 const Button = styled.button`
 height: 32px;
 border: none;

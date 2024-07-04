@@ -32,7 +32,7 @@ const ButtonBox = styled.div`
   margin: 12px auto;
  width: 130px;
 `;
-const Circle = styled.div`
+export const Circle = styled.div`
  border-radius: 100%;
  width: 14px;
 height: 14px;

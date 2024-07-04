@@ -2,6 +2,9 @@ import Logo from 'components/Logo/Logo';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sprite from "../../svg/symbol-defs.svg";
+import Button from 'components/Button/Button';
+import { Circle } from 'components/Faq/Faq';
+import Paragraph from 'components/Paragraph/Paragraph';
 
 const Container = styled.header`
     display: flex;
@@ -49,8 +52,28 @@ const BurgerButton = styled.button`
 const StyledSvg = styled.svg`
     stroke: var(--black);
 `;
+const StyledSvgArrow = styled.svg`
+    stroke: var(--main-color);
+  transform: rotate(180deg);
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  padding: 2px;
 
-const Header = ({ setModalOpen, modalOpen }) => {
+`;
+const Box = styled.div`
+display: flex;
+gap:12px;
+`;
+const ButtonBox = styled.div`
+display: none;
+@media (min-width: 768px){
+    display: flex;
+    width: 140px;
+}
+
+`;
+const Header = ({ setModalOpen, modalOpen, scrollToContact }) => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -75,11 +98,22 @@ const Header = ({ setModalOpen, modalOpen }) => {
     return (
         <Container className={containerClass}>
             <Logo />
-            <BurgerButton onClick={toggleModal}>
-                <StyledSvg width={16} height={16}>
-                    <use href={`${sprite}#icon-menu`} />
-                </StyledSvg>
-            </BurgerButton>
+            <Box>
+                <BurgerButton onClick={toggleModal}>
+                    <StyledSvg width={16} height={16}>
+                        <use href={`${sprite}#icon-menu`} />
+                    </StyledSvg>
+                </BurgerButton>
+                <ButtonBox>
+                    <Button onClick={scrollToContact}><Paragraph>Get in touch</Paragraph>
+                        <Circle>
+                            <StyledSvgArrow >
+                                <use href={`${sprite}#icon-arrow-top`} />
+                            </StyledSvgArrow>
+                        </Circle>
+                    </Button>
+                </ButtonBox>
+            </Box>
         </Container>
     );
 };

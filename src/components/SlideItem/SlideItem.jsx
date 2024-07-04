@@ -31,6 +31,7 @@ const Box = styled.div`
   width: 100%;
   margin: 24px auto 0;
   background-color: var(--accent-background);
+  max-width: 342px;
   
 `;
 const ItemContainer = styled.div`

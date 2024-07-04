@@ -23,13 +23,18 @@ const Container = styled.div`
 export const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const mainRef = useRef(null);
+  const contactRef = useRef(null);
   const scrollToMain = () => {
     mainRef.current.scrollIntoView({ behavior: 'smooth' });
   };
+  const scrollToContact = () => {
+    contactRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Container>
-      <Header setModalOpen={setModalOpen} modalOpen={modalOpen} />
-      <MainContent mainRef={mainRef} />
+      <Header setModalOpen={setModalOpen} modalOpen={modalOpen} scrollToContact={scrollToContact} />
+      <MainContent mainRef={mainRef} scrollToContact={scrollToContact} contactRef={contactRef} />
       <Footer scrollToMain={scrollToMain} />
       {modalOpen && (
         <Modal onClose={() => setModalOpen(false)}>

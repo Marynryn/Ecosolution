@@ -15,6 +15,9 @@ const ValuesContainer = styled.div`
   gap: 24px;
   width: 100%;
   margin: 36px auto 0;
+  @media (min-width: 768px) {
+    margin-top: 100px;
+  }
 `;
 
 const ValueItem = styled.div`

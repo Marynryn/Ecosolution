@@ -7,6 +7,11 @@ const Box = styled.div`
 margin: 24px auto;
 display: flex;
 justify-content: center;
+ @media (min-width: 768px) {
+    margin: 43px auto 0 0;
+    align-items: start;
+    width: 141px;
+  }
 `;
 
 const ButtonLeanMore = ({ onClick }) => {
