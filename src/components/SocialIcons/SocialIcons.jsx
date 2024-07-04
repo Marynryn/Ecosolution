@@ -23,6 +23,7 @@ const SocialButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
+  outline: none;
   fill: ${({ fill }) => fill || 'var(--white)'};
   transition: fill 0.3s;
 
@@ -42,27 +43,27 @@ const SocialContainer = styled.div`
 `;
 
 const SocialIcons = ({ props = {} }) => {
-    const {
-        fill = 'var(--white)',
-        stroke = 'var(--white)',
-        hover = 'var(--accent-color)',
-        gap = '8px',
-    } = props;
+  const {
+    fill = 'var(--white)',
+    stroke = 'var(--white)',
+    hover = 'var(--accent-color)',
+    gap = '8px',
+  } = props;
 
-    return (
-        <SocialContainer gap={gap}>
-            <SocialButton as="a" href="https://www.facebook.com" target="_blank" aria-label="Facebook" fill={fill} hover={hover}>
-                <StyledIcon width={24} height={24} stroke={stroke} hover={hover}>
-                    <use href={`${sprite}#icon-facebook`} />
-                </StyledIcon>
-            </SocialButton>
-            <SocialButton as="a" href="https://www.instagram.com" target="_blank" aria-label="Instagram" fill={fill} hover={hover}>
-                <StyledIcon width={24} height={24} stroke={stroke} hover={hover}>
-                    <use href={`${sprite}#icon-instagram`} />
-                </StyledIcon>
-            </SocialButton>
-        </SocialContainer>
-    );
+  return (
+    <SocialContainer gap={gap}>
+      <SocialButton as="a" href="https://www.facebook.com" target="_blank" aria-label="Facebook" fill={fill} hover={hover}>
+        <StyledIcon width={24} height={24} stroke={stroke} hover={hover}>
+          <use href={`${sprite}#icon-facebook`} />
+        </StyledIcon>
+      </SocialButton>
+      <SocialButton as="a" href="https://www.instagram.com" target="_blank" aria-label="Instagram" fill={fill} hover={hover}>
+        <StyledIcon width={24} height={24} stroke={stroke} hover={hover}>
+          <use href={`${sprite}#icon-instagram`} />
+        </StyledIcon>
+      </SocialButton>
+    </SocialContainer>
+  );
 };
 
 export default SocialIcons;

@@ -10,7 +10,7 @@ import styled from 'styled-components';
 const MainWrapper = styled.main`
  
   text-align: center; 
-  margin-top: 242px;
+  margin-top: 226px;
 `;
 
 const Section = styled.section`
