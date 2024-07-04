@@ -9,7 +9,6 @@ const Container = styled.div`
 const Text = styled.p`
   margin: 0;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
 `;
 
@@ -28,11 +27,11 @@ const Answer = styled.p`
   margin: 16px 0 0 24px;
   display: none;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   letter-spacing: -0.56px;
-  ${({ isVisible }) =>
-    isVisible &&
+
+  ${({ isvisible }) =>
+    isvisible &&
     css`
       display: block;
     `}
@@ -52,26 +51,18 @@ const StyledSvg = styled.svg`
   height: 16px;
 `;
 
-const QuestionAnswer = ({ question, answer, isVisible, onClick }) => {
-
+const QuestionAnswer = ({ question, answer, isvisible, onClick }) => {
   return (
     <Container>
       <Question onClick={onClick}>
-
         <Icon>
-          {isVisible ? (
-            <StyledSvg>
-              <use href={`${sprite}#icon-minus`} />
-            </StyledSvg>
-          ) : (
-            <StyledSvg>
-              <use href={`${sprite}#icon-plus`} />
-            </StyledSvg>
-          )}
+          <StyledSvg>
+            <use href={`${sprite}#${isvisible ? 'icon-minus' : 'icon-plus'}`} />
+          </StyledSvg>
         </Icon>
         <Text>{question}</Text>
       </Question>
-      <Answer isVisible={isVisible}>{answer}</Answer>
+      <Answer isvisible={isvisible}>{answer}</Answer>
     </Container>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react'
 import Subtitle from './../Subtitle/Subtitle';
 import Paragraph from 'components/Paragraph/Paragraph';
-import styled from 'styled-components';
+
 import Values from 'components/Values/Values';
 
 
