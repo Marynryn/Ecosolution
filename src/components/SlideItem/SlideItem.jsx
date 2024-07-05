@@ -4,6 +4,7 @@ import Line from 'components/Line/Line';
 import SvgContainer from 'components/SvgContainer/SvgContainer';
 
 const Button = styled.div`
+ margin-bottom: 21px;
   display: flex;
   height: 60px;
   width: 60px;
@@ -17,6 +18,10 @@ const Button = styled.div`
   
     }
  }
+  @media (min-width: 768px){
+    
+    margin-bottom: 21px;
+  }
 `;
 const Image = styled.img`
   
@@ -35,12 +40,16 @@ const Box = styled.div`
   
 `;
 const ItemContainer = styled.div`
-  margin-bottom: 21px;
+
   display: flex;
   justify-content: space-between;
+
 `;
 const TitleContainer = styled.div`
   width: 175px;
+    @media (min-width:768px){
+   width: 230px;
+  }
 `;
 const TextContainer = styled.div`
   display: flex;
@@ -54,6 +63,9 @@ const Title = styled.p`
   margin: 0;
   letter-spacing: -0.74px;
   text-align: justify;
+  @media (min-width:768px){
+    font-size: 20px;
+  }
 `;
 const Text = styled.p`
   font-size: 12px;
@@ -62,6 +74,9 @@ const Text = styled.p`
   margin: 0;
   letter-spacing: -0.48px;
   text-align: justify;
+    @media (min-width:768px){
+    font-size: 14px;
+  }
 `;
 
 const SlideItem = ({ props, onNext }) => {

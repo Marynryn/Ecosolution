@@ -10,16 +10,29 @@ const CounterWrapper = styled.div`
   gap:8px;
   align-items: center;
   justify-content: center;
+  @media (min-width: 768px){
+    gap: 24px;
+  }
 `;
 const CounterTitle = styled.h5`
 color: var(--main-color);
 font-size: 24px;
+line-height: 24px;
+font-weight: 400;
+@media (min-width: 768px){
+    font-size: 28px;
+    line-height: 48px;
+}
 `;
 const Timer = styled.h1`
 font-size: 48px;
 font-style: normal;
 font-weight: 700;
 line-height: 48px;
+@media (min-width: 768px){
+    font-size: 100px;
+    line-height: 100px;
+}
 `;
 const Counter = () => {
     const targetDate = new Date('2024-07-02T10:22:00');

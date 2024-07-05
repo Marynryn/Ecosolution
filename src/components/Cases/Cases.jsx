@@ -11,22 +11,42 @@ import img05 from '../../img/cards/05.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SlideItem from 'components/SlideItem/SlideItem';
+import Line from 'components/Line/Line';
 
 
 const ContainerCases = styled.div`
   text-align: left;
+`;
+const Box = styled.div`
+
+  @media (min-width: 768px){
+    display: flex;
+    gap: 90px;
+   
+  }
+`;
+const LineBox = styled.div`
+display: none;
+  @media (min-width: 768px){
+    display: flex;
+    margin-right: 9px;
+  }
 `;
 const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
+  @media (min-width: 768px){
+    width: 354px;
+  }
 `;
 const Text = styled.p`
   font-size: 28px;
   font-style: normal;
   font-weight: 300;
   margin: 0;
+  
 `;
 const Span = styled.span`
   color: var(--backdrop-color);
@@ -37,6 +57,12 @@ const StyledSlider = styled(Slider)`
   }
    .slick-next::before {
     display: none ; 
+  }
+  @media (min-width: 768px){
+   
+  .slick-list {
+    margin: 0 -12px; 
+  }
   }
 `;
 const cases = [
@@ -89,14 +115,17 @@ const Cases = () => {
 
     return (
         <ContainerCases>
-            <div style={{ width: "264px" }}>
-                <Subtitle>Successful cases of our company</Subtitle>
-            </div>
-            <Container>
-                <Text>0{currentSlide} <Span>/05</Span></Text>
-                <ScrollButtons onNext={nextSlide} onPrev={prevSlide} />
-            </Container>
-
+            <Box>
+                <div style={{ width: "264px" }}>
+                    <Subtitle>Successful cases of our company</Subtitle>
+                </div>
+                <Container>
+                    <div style={{ display: "flex", alignItems: "end" }}>
+                        <LineBox><Line width={"1px"} height={"65px"} /></LineBox>
+                        <Text>0{currentSlide} <Span>/05</Span></Text></div>
+                    <ScrollButtons onNext={nextSlide} onPrev={prevSlide} />
+                </Container>
+            </Box>
             <StyledSlider ref={sliderRef} {...settings}>
                 {cases.map(caseItem => (
                     <SlideItem key={caseItem.id} props={caseItem} onNext={nextSlide} />

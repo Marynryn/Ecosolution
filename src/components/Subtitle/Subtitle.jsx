@@ -10,7 +10,7 @@ text-transform: uppercase;
 margin-bottom:24px;
 @media (min-width: 768px) {
     font-size: 36px;
-
+margin:0;
 line-height: 36px;
 }
 `;
