@@ -10,6 +10,11 @@ import Button from 'components/Button/Button';
 
 const FAQContainer = styled.div`
   margin: 0 auto;
+   @media (min-width: 768px) {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+ }
  
 `;
 const Text = styled.p`
@@ -23,6 +28,11 @@ const List = styled.ul`
   margin: 0;
   text-decoration: none;
  margin-bottom: 36px;
+   @media (min-width: 768px) {
+   width: 342px;
+   margin: 0;
+   margin-bottom: -16px;
+ }
 `;
 const Item = styled.li`
   margin: 0 auto;
@@ -31,6 +41,9 @@ const Item = styled.li`
 const ButtonBox = styled.div`
   margin: 12px auto;
  width: 130px;
+  @media (min-width: 768px){
+    margin-bottom: 0;
+  }
 `;
 export const Circle = styled.div`
  border-radius: 100%;
@@ -42,7 +55,30 @@ background-color: var(--main-color);
     
  }
 `;
-
+const Box = styled.div`
+   @media (min-width: 768px) {
+   width: 342px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+`;
+const BoxTitle = styled.div`
+ display: none;
+  @media (min-width: 768px) {
+    display: block;
+     text-align: left;
+   
+ }
+`;
+const BoxSubtitle = styled.div`
+ display: block;
+ margin-bottom: 24px;
+ text-align: left;
+ @media (min-width: 768px) {
+    display: none;
+ }
+`;
 const questionsAndAnswers = [
     {
         question: 'How do wind turbines and solar panels work together in a renewable energy system?',
@@ -75,26 +111,36 @@ const Faq = ({ scrollToContact }) => {
 
     return (
         <FAQContainer>
-            <div style={{ textAlign: "left", marginBottom: "24px" }}>
+            <BoxSubtitle >
                 <Subtitle>Frequently Asked Questions</Subtitle>
+            </BoxSubtitle>
+            <div>
+                <Line />
+                <List>
+                    {questionsAndAnswers.map((item, index) => (
+                        <Item key={index}>
+                            <QuestionAnswer
+                                question={item.question}
+                                answer={item.answer}
+                                isVisible={openIndex === index}
+                                onClick={() => handleToggle(index)}
+                            />
+                            {index !== questionsAndAnswers.length - 1 && <Line />}
+                        </Item>
+                    ))}</List>
             </div>
-            <Line />
-            <List>
-                {questionsAndAnswers.map((item, index) => (
-                    <Item key={index}>
-                        <QuestionAnswer
-                            question={item.question}
-                            answer={item.answer}
-                            isVisible={openIndex === index}
-                            onClick={() => handleToggle(index)}
-                        />
-                        <Line />
-                    </Item>
-                ))}</List>
-            <Text>Didn't find the answer to your question? </Text>
-            <ButtonBox><Button onClick={scrollToContact}><Paragraph>Contact Us</Paragraph>
-                <Circle></Circle>
-            </Button></ButtonBox>
+            <Box>
+                <BoxTitle >
+                    <Subtitle>Frequently Asked Questions</Subtitle>
+                </BoxTitle>
+                <div>
+                    <Text>Didn't find the answer to your question? </Text>
+
+                    <ButtonBox><Button onClick={scrollToContact}><Paragraph>Contact Us</Paragraph>
+
+                        <Circle></Circle>
+                    </Button></ButtonBox></div>
+            </Box>
         </FAQContainer>
     );
 };

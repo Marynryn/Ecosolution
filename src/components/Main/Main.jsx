@@ -26,17 +26,19 @@ margin-top: 24px;
 align-items: center;
 margin-bottom: 36px;
 @media (min-width: 768px){
-    flex-direction: row;
- justify-content: space-between;
-    
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 `;
 const Box = styled.div`
 
 @media (min-width: 768px) {
-display: flex;
+display: grid;
+grid-template-columns: 1fr 1fr;
 margin-bottom: 26px;
-gap: 65px;
+gap: 24px;
 }
 `;
 const ParagraphBox = styled.div`
@@ -44,6 +46,13 @@ display: none;
 @media (min-width: 768px) {
 display: flex;
 
+}
+`;
+const TextBox = styled.div`
+
+@media (min-width: 768px) {
+display: flex;
+justify-content: space-between;
 }
 `;
 const Image = styled.img`
@@ -67,8 +76,8 @@ const Main = ({ scrollToCases }) => {
             <Line />
             <Container >
                 <div><Paragraph>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Paragraph></div>
-                <div><Paragraph>office@ecosolution.com</Paragraph></div>
-                <ParagraphBox><Paragraph>ecosolution &copy; 2023</Paragraph></ParagraphBox>
+                <TextBox><Paragraph>office@ecosolution.com</Paragraph>
+                    <ParagraphBox><Paragraph>ecosolution &copy; 2023</Paragraph></ParagraphBox></TextBox>
             </Container>
             <Image src={heroImage} alt="wind turbine" />
         </div>

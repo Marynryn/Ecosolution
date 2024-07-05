@@ -10,6 +10,9 @@ const FormContainer = styled.form`
   background-color: var(--accent-background);
   margin-top: 24px;
   padding: 36px 12px;
+  @media (min-width:768px) {
+    margin: 0;
+  }
 `;
 
 const Input = styled.input`
@@ -24,7 +27,7 @@ const Input = styled.input`
   font-family: "Fira Sans";
   font-weight: 400;
   &::placeholder {
-    opacity: 1;
+ color: var(-placeholder-color);
   }
     &:not(:placeholder-shown), &:focus  {
   
@@ -56,7 +59,7 @@ const TextArea = styled.textarea`
   font-family: "Fira Sans";
   font-weight: 400;
   &::placeholder {
-    opacity: 1;
+ color: var(-placeholder-color);
   }
 `;
 

@@ -10,6 +10,12 @@ import styled from 'styled-components';
 
 const ContactBox = styled.div`
 margin-top:24px;
+@media (min-width: 768px){
+    margin-top:40px;
+display: grid;
+gap:24px;
+ grid-template-columns: 1fr 1fr;
+}
 `;
 
 const ContactUs = () => {
@@ -17,11 +23,12 @@ const ContactUs = () => {
         <div>
             <Subtitle>Contact Us</Subtitle>
             <ContactBox>
-                <Phone />
-                <Email />
-                <Address />
-                <SocialNetworks />
-
+                <div>
+                    <Phone />
+                    <Email />
+                    <Address />
+                    <SocialNetworks />
+                </div>
                 <ContactForm />
             </ContactBox>
         </div>

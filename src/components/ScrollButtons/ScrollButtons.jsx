@@ -6,6 +6,9 @@ const Container = styled.div`
 display: flex;
 margin-bottom: 7px;
 gap:12px;
+@media (min-width: 768px){
+    margin: 0;
+}
 `;
 const Button = styled.div`
 display: flex;

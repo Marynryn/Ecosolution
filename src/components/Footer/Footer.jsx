@@ -1,5 +1,6 @@
 import Line from 'components/Line/Line';
 import Logo from 'components/Logo/Logo';
+import Paragraph from 'components/Paragraph/Paragraph';
 
 import SocialIcons from 'components/SocialIcons/SocialIcons';
 import SvgContainer from 'components/SvgContainer/SvgContainer';
@@ -12,6 +13,12 @@ display: flex;
 justify-content: space-between;
 margin-top: 24px;
 align-items: center;
+@media (min-width: 768px) {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    gap: 24px;
+    margin-bottom: 16px;
+}
 `;
 
 const Button = styled.button`
@@ -23,21 +30,51 @@ const IconBox = styled.div`
 display: flex;
 justify-content: center;
 margin: 24px 0;
+@media (min-width: 768px) {
+    display: none;
+}
+`;
+const BoxIcon = styled.div`
+display: none;
+
+@media (min-width: 768px) {
+    display: block;
+}
+`;
+const TextBox = styled.div`
+display: flex;
+flex-direction: column;
+gap:16px;
+align-items: center;
+@media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+}
+`;
+const Container = styled.div`
+
+
+@media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 `;
 const InfoBox = styled.div`
 display: flex;
 flex-direction: column;
 gap:16px;
-text-align: center;
-`;
-const Text = styled.p`
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-text-align: center;
-letter-spacing: -0.64px;
-margin:0;
-`;
+align-items: center;
+@media (min-width: 768px)
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+   
+}`;
+
 const Footer = ({ scrollToMain }) => {
 
     return (
@@ -45,18 +82,22 @@ const Footer = ({ scrollToMain }) => {
             <Line />
             <Box>
                 <Logo />
-                <Button type='button' onClick={scrollToMain}>
-                    <SvgContainer svgId={"icon-arrow-top"} />
-                </Button>
-
+                <Container>
+                    <BoxIcon> <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} /></BoxIcon>
+                    <Button type='button' onClick={scrollToMain}>
+                        <SvgContainer svgId={"icon-arrow-top"} />
+                    </Button>
+                </Container>
             </Box>
             <IconBox>
                 <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} />
             </IconBox>
             <InfoBox>
-                <Text>79005, Ukraine, Lviv, street. Shota Rustaveli, 7</Text>
-                <Text>office@ecosolution.com</Text>
-                <Text>ecosolution &copy; 2023</Text>
+                <Paragraph>79005, Ukraine, Lviv, street. Shota Rustaveli, 7</Paragraph>
+                <TextBox>
+                    <Paragraph>office@ecosolution.com</Paragraph>
+                    <Paragraph>ecosolution &copy; 2023</Paragraph>
+                </TextBox>
             </InfoBox>
         </div>
     )

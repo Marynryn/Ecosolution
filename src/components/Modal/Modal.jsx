@@ -27,6 +27,10 @@ margin: 36px 20px;
  height: calc(100% - 120px);
   overflow-y: auto;
   position: relative;
+  @media (min-width: 768px) {
+ width: 317px;
+ margin-right: 100px;
+  }
 `;
 
 const CloseButton = styled.button`
