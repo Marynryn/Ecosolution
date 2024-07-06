@@ -4,7 +4,12 @@ import sprite from "../../svg/symbol-defs.svg";
 import styled from 'styled-components';
 
 
-
+export const Box = styled.div`
+margin-bottom: 24px;
+@media (min-width:1280px){
+margin-top: 32px;
+}
+`;
 export const StyledSvg = styled.svg`
   width: 24px;
   height: 24px;
@@ -22,7 +27,10 @@ export const Text = styled.p`
   font-weight: 400;
   letter-spacing: -0.8px;
   text-align: left;
-  width: 212px;
+ 
+  @media (min-width:1280px){
+font-size: 24px;
+}
 `;
 
 const PhoneNumber = styled.a`
@@ -33,26 +41,29 @@ const PhoneNumber = styled.a`
   color: inherit;
 margin-top:8px;
 margin-bottom: 12px;
+@media (min-width:1280px){
+margin-top: 16px;
+}
 `;
 
 const Phone = () => {
-    return (
-        <div style={{ marginBottom: "24px" }}>
-            <Paragraph>Phone:</Paragraph>
-            <PhoneNumber href="tel:380981234567">
-                <StyledSvg>
-                    <use href={`${sprite}#icon-call`} />
-                </StyledSvg>
-                <Text>38 (098) 12 34 567</Text>
-            </PhoneNumber>
-            <PhoneNumber href="tel:380931234567">
-                <StyledSvg>
-                    <use href={`${sprite}#icon-call`} />
-                </StyledSvg>
-                <Text>38 (093) 12 34 567</Text>
-            </PhoneNumber>
-        </div>
-    );
+  return (
+    <Box >
+      <Paragraph>Phone:</Paragraph>
+      <PhoneNumber href="tel:380981234567">
+        <StyledSvg>
+          <use href={`${sprite}#icon-call`} />
+        </StyledSvg>
+        <Text>38 (098) 12 34 567</Text>
+      </PhoneNumber>
+      <PhoneNumber href="tel:380931234567">
+        <StyledSvg>
+          <use href={`${sprite}#icon-call`} />
+        </StyledSvg>
+        <Text>38 (093) 12 34 567</Text>
+      </PhoneNumber>
+    </Box>
+  );
 }
 
 export default Phone;

@@ -13,6 +13,9 @@ const FormContainer = styled.form`
   @media (min-width:768px) {
     margin: 0;
   }
+    @media (min-width:1280px) {
+        padding: 48px;
+    }
 `;
 
 const Input = styled.input`
@@ -32,6 +35,10 @@ const Input = styled.input`
     &:not(:placeholder-shown), &:focus  {
   
      background-color: transparent; 
+  }
+  @media (min-width: 1280px){
+    font-size:20px;
+    margin-top: 12px;
   }
 `;
 
@@ -60,6 +67,10 @@ const TextArea = styled.textarea`
   font-weight: 400;
   &::placeholder {
  color: var(-placeholder-color);
+  }
+    @media (min-width: 1280px){
+    font-size:20px;
+    margin: 12px 0 32px 0;
   }
 `;
 

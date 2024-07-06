@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import Header from "./Header/Header";
 import { useRef, useState } from "react";
 import Modal from "./Modal/Modal";
@@ -8,18 +7,21 @@ import MainContent from "./MainContent/MainContent";
 import Footer from "./Footer/Footer";
 import { Toaster } from "react-hot-toast";
 
-
-
 const Container = styled.div`
   padding: 36px 20px 24px 20px;
+    @media (min-width: 480px){
+width: 440px;
+margin: 0 auto;
+    }
   @media (min-width: 768px) {
-    padding: 36px 30px 40px 30px
+    padding: 36px 30px 40px 30px;
+    width: 708px;
 ;  }
  @media (min-width: 1280px) {
-    padding: 24px 100px 40px 100px
+    padding: 24px 20px 40px;
+    width: 1240px;
 ;  }
 `;
-
 export const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const mainRef = useRef(null);
@@ -31,7 +33,7 @@ export const App = () => {
     contactRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  return (
+  return (<>
     <Container>
       <Header setModalOpen={setModalOpen} modalOpen={modalOpen} scrollToContact={scrollToContact} />
       <MainContent mainRef={mainRef} scrollToContact={scrollToContact} contactRef={contactRef} />
@@ -42,6 +44,6 @@ export const App = () => {
         </Modal>
       )}
       <Toaster position="top-right" reverseOrder={false} />
-    </Container>
+    </Container></>
   );
 };

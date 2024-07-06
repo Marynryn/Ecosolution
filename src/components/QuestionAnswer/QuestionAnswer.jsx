@@ -4,12 +4,18 @@ import sprite from '../../svg/symbol-defs.svg';
 
 const Container = styled.div`
   margin: 16px 0;
+   @media (min-width: 1280px){
+    margin: 24px 0;
+   }
 `;
 
 const Text = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 400;
+   @media (min-width: 1280px){
+    font-size: 24px;
+   }
 `;
 
 const Question = styled.div`
@@ -20,6 +26,7 @@ const Question = styled.div`
   text-align: justify;
   cursor: pointer;
   letter-spacing: -0.72px;
+   @media (min-width: 1280px){gap:24px;}
 `;
 
 const Answer = styled.p`
@@ -33,6 +40,12 @@ const Answer = styled.p`
   &.active {
     display: block;
   }
+   @media (min-width: 1280px){
+    margin:24px 0 0 52px;
+     font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+    }
 `;
 
 const Icon = styled.div`
@@ -41,12 +54,16 @@ const Icon = styled.div`
   width: 16px;
   height: 16px;
   cursor: pointer;
+  @media (min-width: 1280px){ width: 28px;
+  height: 28px;}
 `;
 
 const StyledSvg = styled.svg`
   stroke: var(--accent-color);
   width: 16px;
   height: 16px;
+   @media (min-width: 1280px){ width: 28px;
+  height: 28px;}
 `;
 
 const QuestionAnswer = ({ question, answer, isVisible, onClick }) => {

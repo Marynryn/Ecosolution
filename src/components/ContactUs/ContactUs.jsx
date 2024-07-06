@@ -16,6 +16,9 @@ display: grid;
 gap:24px;
  grid-template-columns: 1fr 1fr;
 }
+@media (min-width: 1280px){
+    gap: 48px;
+}
 `;
 
 const ContactUs = () => {

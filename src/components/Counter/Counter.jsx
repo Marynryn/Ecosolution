@@ -22,6 +22,9 @@ font-weight: 400;
 @media (min-width: 768px){
     font-size: 28px;
     line-height: 48px;
+}@media (min-width: 1280px){
+    font-size: 48px;
+  
 }
 `;
 const Timer = styled.h1`
@@ -32,6 +35,10 @@ line-height: 48px;
 @media (min-width: 768px){
     font-size: 100px;
     line-height: 100px;
+}
+@media (min-width: 1280px){
+    font-size: 164px;
+    line-height: 164px;
 }
 `;
 const Counter = () => {

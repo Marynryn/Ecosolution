@@ -12,7 +12,10 @@ const MainWrapper = styled.main`
   text-align: center; 
   margin-top: 190px;
   @media (min-width: 768px) {
-    margin-top: 208px;
+    margin-top: 204px;
+  }
+    @media (min-width: 1280px) {
+    margin-top: 240px;
   }
 `;
 
@@ -22,6 +25,10 @@ const Section = styled.section`
   @media (min-width: 768px){
      margin-bottom: 100px;
   }
+    @media (min-width: 1280px){
+margin-bottom: 120px;
+
+    }
 `;
 
 const MainContent = ({ mainRef, scrollToContact, contactRef }) => {

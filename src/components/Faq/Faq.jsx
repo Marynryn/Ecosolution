@@ -15,7 +15,9 @@ const FAQContainer = styled.div`
     gap: 24px;
     grid-template-columns: 1fr 1fr;
  }
- 
+  @media (min-width: 1280px){
+    gap:48px;
+  }
 `;
 const Text = styled.p`
   margin: 0 ;
@@ -23,13 +25,17 @@ const Text = styled.p`
 font-style: normal;
 font-weight: 400;
 letter-spacing: -0.72px;
+  @media (min-width: 1280px){
+    font-size: 24px;
+    letter-spacing: -0.96px;
+  }
 `;
 const List = styled.ul`
   margin: 0;
   text-decoration: none;
  margin-bottom: 36px;
    @media (min-width: 768px) {
-   width: 342px;
+   
    margin: 0;
    margin-bottom: -16px;
  }
@@ -62,6 +68,11 @@ const Box = styled.div`
      flex-direction: column;
      justify-content: space-between;
  }
+   @media (min-width: 1280px){
+    text-align: center;
+    margin-left: 137px;
+     width: 399px;
+  }
 `;
 const BoxTitle = styled.div`
  display: none;
@@ -78,6 +89,7 @@ const BoxSubtitle = styled.div`
  @media (min-width: 768px) {
     display: none;
  }
+
 `;
 const questionsAndAnswers = [
     {

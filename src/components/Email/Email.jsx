@@ -1,4 +1,4 @@
-import { StyledSvg, Text } from 'components/Phone/Phone';
+import { Box, StyledSvg, Text } from 'components/Phone/Phone';
 import React from 'react';
 import sprite from "../../svg/symbol-defs.svg";
 import Paragraph from 'components/Paragraph/Paragraph';
@@ -11,23 +11,27 @@ const EmailLink = styled.a`
   text-decoration: none;
   color: inherit;
 margin-top: 8px;
+width: 100%;
   &:hover ${StyledSvg} {
     stroke: var(--accent-color);
   }
+  @media (min-width:1280px){
+margin-top: 16px;
+}
 `;
 
 const Email = () => {
-    return (
-        <div style={{ marginBottom: "24px" }}>
-            <Paragraph>Email:</Paragraph>
-            <EmailLink href="mailto:office@ecosolution.com">
-                <StyledSvg>
-                    <use href={`${sprite}#icon-sms`} />
-                </StyledSvg>
-                <Text>office@ecosolution.com</Text>
-            </EmailLink>
-        </div>
-    );
+  return (
+    <Box >
+      <Paragraph>Email:</Paragraph>
+      <EmailLink href="mailto:office@ecosolution.com">
+        <StyledSvg>
+          <use href={`${sprite}#icon-sms`} />
+        </StyledSvg>
+        <Text>office@ecosolution.com</Text>
+      </EmailLink>
+    </Box>
+  );
 }
 
 export default Email;

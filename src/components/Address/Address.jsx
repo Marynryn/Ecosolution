@@ -1,4 +1,4 @@
-import { StyledSvg, Text } from 'components/Phone/Phone';
+import { Box, StyledSvg, Text } from 'components/Phone/Phone';
 import React from 'react';
 import sprite from "../../svg/symbol-defs.svg";
 import Paragraph from 'components/Paragraph/Paragraph';
@@ -14,11 +14,14 @@ const MapLink = styled.a`
   &:hover ${StyledSvg} {
     stroke: var(--accent-color);
   }
+  @media (min-width:1280px){
+margin-top: 16px;
+}
 `;
 
 const Address = () => {
     return (
-        <div style={{ marginBottom: "24px" }}>
+        <Box>
             <Paragraph>Address:</Paragraph>
             <MapLink href="https://maps.google.com/?q=79005+Ukraine+Lviv+street+Shota+Rustaveli+7" target="_blank" rel="noopener noreferrer">
                 <StyledSvg>
@@ -26,7 +29,7 @@ const Address = () => {
                 </StyledSvg>
                 <Text>79005, Ukraine, Lviv, street. Shota Rustaveli, 7</Text>
             </MapLink>
-        </div>
+        </Box>
     );
 }
 

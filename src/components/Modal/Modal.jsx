@@ -22,17 +22,29 @@ const ModalContent = styled.div`
   backdrop-filter: blur(12.5px);
   border-radius: 25px;
   padding: 24px;
-margin: 36px 20px;
+margin: 0 0 0 auto;
  width: 272px;
  height: calc(100% - 120px);
   overflow-y: auto;
   position: relative;
   @media (min-width: 768px) {
  width: 317px;
- margin-right: 100px;
+
   }
 `;
+const Box = styled.div`
+display: flex;
+align-items: right;
+margin: 36px 20px;
+ width: 100%;
+ height: 100%;
+  overflow-y: auto;
+  position: relative;
+  @media (min-width: 768px) {
 
+ margin-right: 30px;
+  }
+`;
 const CloseButton = styled.button`
 margin-bottom: 8px;
   border: none;
@@ -88,17 +100,19 @@ const Modal = ({ onClose, children }) => {
         };
     }, [handleCloseModal]);
     return (
-        <ModalBackdrop onClick={handleBackdropClick}>
-            <ModalContent >
-                <CloseButton onClick={handleCloseModal}>
-                    <StyledSvg width={20} height={20} >
-                        <use href={`${sprite}#icon-x`} />
-                    </StyledSvg>
-                    <WordClose>close</WordClose>
-                </CloseButton>
-                <Line color={"var(--white)"} />
-                {children}
-            </ModalContent>
+        <ModalBackdrop >
+            <Box onClick={handleBackdropClick}>
+                <ModalContent >
+                    <CloseButton onClick={handleCloseModal}>
+                        <StyledSvg width={20} height={20} >
+                            <use href={`${sprite}#icon-x`} />
+                        </StyledSvg>
+                        <WordClose>close</WordClose>
+                    </CloseButton>
+                    <Line color={"var(--white)"} />
+                    {children}
+                </ModalContent>
+            </Box>
         </ModalBackdrop>
     );
 };

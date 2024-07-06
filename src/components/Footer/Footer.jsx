@@ -19,6 +19,9 @@ align-items: center;
     gap: 24px;
     margin-bottom: 16px;
 }
+@media (min-width: 1280px) {
+gap: 300px;
+}
 `;
 
 const Button = styled.button`
@@ -73,7 +76,11 @@ align-items: center;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
    
-}`;
+}
+@media (min-width: 768px){
+    gap: 300px;
+}
+`;
 
 const Footer = ({ scrollToMain }) => {
 

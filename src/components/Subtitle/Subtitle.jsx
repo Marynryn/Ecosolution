@@ -13,6 +13,11 @@ margin-bottom:24px;
 margin:0;
 line-height: 36px;
 }
+@media (min-width: 1280px) {
+       font-size: 48px;
+
+line-height: 48px;
+}
 `;
 const Subtitle = ({ children }) => {
     return (

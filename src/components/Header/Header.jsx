@@ -7,8 +7,7 @@ import { Circle } from 'components/Faq/Faq';
 import Paragraph from 'components/Paragraph/Paragraph';
 
 const Container = styled.header`
-    display: flex;
-    justify-content: space-between;
+   
     padding: 36px 20px;
     position: fixed;
     z-index: 5;   
@@ -23,15 +22,30 @@ const Container = styled.header`
 
     @media (min-width: 768px) {
         padding: 36px 30px 40px 30px;
-        width: calc(100% - 60px);
+      
     }
 
     @media (min-width: 1280px) {
-        padding: 24px 100px 20px 100px;
-        width: calc(100% - 200px);
+        padding: 24px 20px;
+        
+       
     }
 `;
-
+const BoxHeader = styled.div`
+ display: flex;
+    justify-content: space-between;
+    align-items: center;
+      @media (min-width: 480px){
+width: 440px;
+margin: 0 auto;
+    }
+    @media (min-width: 768px){
+         width: 708px;
+    }
+      @media (min-width: 1280px){
+         width: 1240px;
+    }
+`;
 const BurgerButton = styled.button`
     width: 40px;
     height: 39px;
@@ -96,24 +110,27 @@ const Header = ({ setModalOpen, modalOpen, scrollToContact }) => {
     const containerClass = isScrolled ? 'scrolled' : '';
 
     return (
+
         <Container className={containerClass}>
-            <Logo />
-            <Box>
-                <BurgerButton onClick={toggleModal}>
-                    <StyledSvg width={16} height={16}>
-                        <use href={`${sprite}#icon-menu`} />
-                    </StyledSvg>
-                </BurgerButton>
-                <ButtonBox>
-                    <Button onClick={scrollToContact}><Paragraph>Get in touch</Paragraph>
-                        <Circle>
-                            <StyledSvgArrow >
-                                <use href={`${sprite}#icon-arrow-top`} />
-                            </StyledSvgArrow>
-                        </Circle>
-                    </Button>
-                </ButtonBox>
-            </Box>
+            <BoxHeader>
+                <Logo />
+                <Box>
+                    <BurgerButton onClick={toggleModal}>
+                        <StyledSvg width={16} height={16}>
+                            <use href={`${sprite}#icon-menu`} />
+                        </StyledSvg>
+                    </BurgerButton>
+                    <ButtonBox>
+                        <Button onClick={scrollToContact}><Paragraph>Get in touch</Paragraph>
+                            <Circle>
+                                <StyledSvgArrow >
+                                    <use href={`${sprite}#icon-arrow-top`} />
+                                </StyledSvgArrow>
+                            </Circle>
+                        </Button>
+                    </ButtonBox>
+                </Box>
+            </BoxHeader>
         </Container>
     );
 };
