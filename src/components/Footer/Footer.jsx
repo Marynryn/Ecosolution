@@ -105,7 +105,7 @@ const Footer = ({ scrollToMain }) => {
                 <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} />
             </IconBox>
             <InfoBox>
-                <Paragraph>79005, Ukraine, Lviv, street. Shota Rustaveli, 7</Paragraph>
+                <Paragraph>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Paragraph>
                 <TextBox>
                     <Paragraph>office@ecosolution.com</Paragraph>
                     <Paragraph>ecosolution &copy; 2023</Paragraph>

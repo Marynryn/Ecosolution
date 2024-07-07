@@ -29,17 +29,17 @@ margin-top: 16px;
 `;
 
 const Address = () => {
-    return (
-        <Box>
-            <Paragraph>Address:</Paragraph>
-            <MapLink href="https://maps.google.com/?q=79005+Ukraine+Lviv+street+Shota+Rustaveli+7" target="_blank" rel="noopener noreferrer">
-                <StyledSvg>
-                    <use href={`${sprite}#icon-map`} />
-                </StyledSvg>
-                <Text>79005, Ukraine, Lviv, street. Shota Rustaveli, 7</Text>
-            </MapLink>
-        </Box>
-    );
+  return (
+    <Box>
+      <Paragraph>Address:</Paragraph>
+      <MapLink href="https://maps.google.com/?q=79005+Ukraine+Lviv+street+Shota+Rustaveli+7" target="_blank" rel="noopener noreferrer">
+        <StyledSvg>
+          <use href={`${sprite}#icon-map`} />
+        </StyledSvg>
+        <Text>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Text>
+      </MapLink>
+    </Box>
+  );
 }
 
 export default Address;
