@@ -1,5 +1,4 @@
 import React from 'react'
-
 import TransparentButton from 'components/TransparentButton/TransparentButton';
 import styled from 'styled-components';
 
@@ -19,7 +18,6 @@ const ButtonLeanMore = ({ onClick }) => {
         <Box >
             <TransparentButton onClick={onClick}>
                 Learn More
-
             </TransparentButton>
 
         </Box>

@@ -67,10 +67,11 @@ const BurgerButton = styled.button`
 `;
 
 const StyledSvg = styled.svg`
-    stroke: var(--main-color);
+    stroke: var(--black);
 `;
 const StyledSvgArrow = styled.svg`
     stroke: var(--main-color);
+    fill: var(--main-color);
   transform: rotate(180deg);
   width: 10px;
   height: 10px;
