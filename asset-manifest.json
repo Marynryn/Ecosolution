@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ecosolution/static/css/main.e0107d89.css",
+    "main.css": "/ecosolution/static/css/main.d36e8800.css",
     "main.js": "/ecosolution/static/js/main.8cc6ae95.js",
     "static/media/wind-turbine-clean-energy2x.webp": "/ecosolution/static/media/wind-turbine-clean-energy2x.28b8ccc9fe2cf5627bf5.webp",
     "static/media/02_2x.webp": "/ecosolution/static/media/02_2x.c83238e3e59ad3f28216.webp",
@@ -24,11 +24,11 @@
     "static/media/slick.ttf": "/ecosolution/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/ecosolution/index.html",
     "static/media/slick.woff": "/ecosolution/static/media/slick.295183786cd8a1389865.woff",
-    "main.e0107d89.css.map": "/ecosolution/static/css/main.e0107d89.css.map",
+    "main.d36e8800.css.map": "/ecosolution/static/css/main.d36e8800.css.map",
     "main.8cc6ae95.js.map": "/ecosolution/static/js/main.8cc6ae95.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0107d89.css",
+    "static/css/main.d36e8800.css",
     "static/js/main.8cc6ae95.js"
   ]
 }
