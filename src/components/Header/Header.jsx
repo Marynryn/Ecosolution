@@ -67,7 +67,7 @@ const BurgerButton = styled.button`
 `;
 
 const StyledSvg = styled.svg`
-    stroke: var(--black);
+    stroke: var(--main-color);
 `;
 const StyledSvgArrow = styled.svg`
     stroke: var(--main-color);

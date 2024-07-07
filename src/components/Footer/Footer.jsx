@@ -25,9 +25,20 @@ gap: 300px;
 `;
 
 const Button = styled.button`
+padding: 0;
+display: flex;
 height: 32px;
+width: 32px;
 border: none;
-background-color: transparent;
+background-color: var(--accent-color);
+border-radius: 100px;
+   &:hover{
+    background-color: var(--main-color);
+    svg{
+        stroke: var(--accent-color);
+
+    }
+}
 `;
 const IconBox = styled.div`
 display: flex;
@@ -92,7 +103,7 @@ const Footer = ({ scrollToMain }) => {
                 <Container>
                     <BoxIcon> <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} /></BoxIcon>
                     <Button type='button' onClick={scrollToMain}>
-                        <SvgContainer svgId={"icon-arrow-top"} />
+                        <SvgContainer svgId={"icon-arrow-top"} backgroundColor='transparent' size="16px" padding="8px" />
                     </Button>
                 </Container>
             </Box>
