@@ -1,55 +1,41 @@
-# Nanny.Services
+# EcoSolution
 
-![Screenshot of the homepage](/src/img/screenshots/home-page.png)
+![Screenshot of the homepage](/assets/OG.png)
 
-**Nanny.Services** is a website is designed for finding a nanny and booking appointments.
+**EcoSolution** is a one-page landing website dedicated to providing comprehensive renewable energy solutions tailored to meet the specific needs of businesses and communities.
 
 ## Description
 
-At Nanny.Services, we understand the importance of finding the perfect caregiver for your little ones. That's why we've created a seamless platform where you can search for experienced nannies based on your specific needs and preferences.
+At **EcoSolution**, we believe in harnessing the power of renewable energy to create a sustainable future. Our platform offers a range of services, including the installation of wind turbines, solar panels, and other cutting-edge renewable technologies.
 
-Our comprehensive search filters allow you to narrow down your options and find the ideal match for your family.
+Our intuitive design allows users to easily navigate and find detailed information about each of our solutions. We provide clear and concise details, ensuring you have all the necessary information to make informed decisions.
 
-Booking appointments with nannies has never been simpler. With our intuitive scheduling system, you can easily view the availability of multiple nannies at a glance and book appointments that fit your busy schedule. Say goodbye to endless phone calls and back-and-forth emails – with Nanny.Services, everything you need is right at your fingertips.
+Join the growing number of businesses and communities that have chosen **EcoSolution** for their renewable energy needs. Explore our website today and take the first step towards a greener future.
 
-Join the thousands of families who have found peace of mind through our trusted platform. Sign up today and take the first step towards finding the perfect nanny for your family.
+## Sections
 
-## Functionality
-
-- **HomePage:** Page with navigation, slogan and Registration form.
-- **Profile:** Registration and creation of a personal profile for managing
-  bookings and saving preferences.
-- **Filter** Allow you to narrow down your options and find the ideal nanny for your family.
-- **Nanny`s Card:** View detailed information about each nanny, including photos, location, price, age,education, reviews, and ratings.
-- **Booking:** Online booking. You can leave your details and information about your child here to schedule a meeting with a nanny.
-- **Favorites:** Page displaying your favorite nanny profiles, also filterable by categories.
+- **Header:** Contains the navigation menu, company logo, and a brief introduction.
+- **About Us:** Information about our mission, vision, and the team behind **EcoSolution**.
+- **Case Studies:** Real-world examples of how our solutions have been successfully implemented.
+- **FAQ:** Frequently asked questions and answers to help you understand more about our services.
+- **Contact Us:** A simple contact form where you can leave your details and inquiries.
 
 ## Technologies
 
-Nanny.Services is built using the following technologies:
+**EcoSolution** is built using the following technologies:
 
 - HTML
 - CSS
 - JavaScript
 - React
 - React hooks
-- React Router
-- Redux
-- Redux-toolkit
-- Tailwind
-- Yup
-- React-select
-- Firebase
+- Styled-components
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/Marynryn/babysitters`
-2. Open the `index.html` file in your web browser.
-
-## Demo
-
-![Screenshot of the card](/src/img/screenshots/card.png)
-![Screenshot of the booking form](/src/img/screenshots/booking-form.png)
+1. Clone the repository: `git clone https://github.com/Marynryn/ecosolution`
+2. Install the dependencies: `npm install`
+3. Start the development server: `npm start`
 
 ## Author
 
