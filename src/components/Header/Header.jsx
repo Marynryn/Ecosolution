@@ -13,6 +13,7 @@ const Container = styled.header`
     z-index: 5;   
     top: 0;
     left: 0;
+   text-align: center;
     width: calc(100% - 40px);
     transition: background-color 0.3s ease; 
 
@@ -22,25 +23,27 @@ const Container = styled.header`
 
     @media (min-width: 768px) {
         padding: 36px 30px 40px 30px;
-      
+      width: calc(100% - 60px)
     }
 
     @media (min-width: 1280px) {
         padding: 24px 20px;
-        
-       
+        margin: 0 auto;
+       width: calc(100% - 40px)
     }
 `;
 const BoxHeader = styled.div`
  display: flex;
     justify-content: space-between;
     align-items: center;
+   
       @media (min-width: 480px){
 width: 440px;
 margin: 0 auto;
     }
     @media (min-width: 768px){
          width: 708px;
+         
     }
       @media (min-width: 1280px){
          width: 1240px;

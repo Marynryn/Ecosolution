@@ -40,9 +40,17 @@ margin: 36px 20px;
  height: 100%;
   overflow-y: auto;
   position: relative;
+   @media (min-width: 480px){
+width: 440px;
+margin: 36px auto;
+    }
   @media (min-width: 768px) {
 
  margin-right: 30px;
+  }
+  @media (min-width: 1280px){
+    width: 1240px;
+    margin: 24px auto;
   }
 `;
 const CloseButton = styled.button`

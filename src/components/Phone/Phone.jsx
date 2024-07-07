@@ -10,7 +10,7 @@ margin-bottom: 24px;
 margin-top: 32px;
 }
 `;
-export const StyledSvg = styled.svg`
+const StyledSvg = styled.svg`
   width: 24px;
   height: 24px;
   stroke: var(--main-color);
@@ -41,8 +41,12 @@ const PhoneNumber = styled.a`
   color: inherit;
 margin-top:8px;
 margin-bottom: 12px;
+  &:hover ${StyledSvg} {
+    stroke: var(--accent-color);
+  }
 @media (min-width:1280px){
 margin-top: 16px;
+
 }
 `;
 

@@ -3,11 +3,16 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import ScrollButtons from 'components/ScrollButtons/ScrollButtons';
 import Subtitle from 'components/Subtitle/Subtitle';
-import img01 from '../../img/cards/01.png';
-import img02 from '../../img/cards/02.png';
-import img03 from '../../img/cards/03.png';
-import img04 from '../../img/cards/04.png';
-import img05 from '../../img/cards/05.png';
+import img01 from 'img/cards/01_1x.webp';
+import img02 from 'img/cards/02_1x.webp';
+import img03 from 'img/cards/03_1x.webp';
+import img04 from 'img/cards/04_1x.webp';
+import img05 from 'img/cards/05_1x.webp';
+import img01_2x from 'img/cards/01_2x.webp';
+import img02_2x from 'img/cards/02_2x.webp';
+import img03_2x from 'img/cards/03_2x.webp';
+import img04_2x from 'img/cards/04_2x.webp';
+import img05_2x from 'img/cards/05_2x.webp';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SlideItem from 'components/SlideItem/SlideItem';
@@ -79,11 +84,11 @@ const StyledSlider = styled(Slider)`
   }
 `;
 const cases = [
-  { id: "01", img: img01, city: "Lviv Region, Radekhiv town", title: "Private Enterprise “ZAKHIDNYI BUH”", description: "Wind Power for auto field irrigation", date: "July 2023" },
-  { id: "02", img: img02, city: "Zhytomyr city", title: "Private Enterprise “Bosch”", description: "Solar Panels for industrial use", date: "November 2023" },
-  { id: "03", img: img03, city: "Rivne city", title: "Private Enterprise “Biotech”", description: "Thermal modules", date: "October 2023" },
-  { id: "04", img: img04, city: "Kherson city", title: "Private Enterprise “HealthyFarm”", description: "Wind power", date: "September 2021" },
-  { id: "05", img: img05, city: "Zaporizhia city", title: "Private Enterprise “Biotech”", description: "Mini nuclear stations", date: "May 2021" }
+  { id: "01", img: img01, img2: img01_2x, city: "Lviv Region, Radekhiv town", title: "Private Enterprise “ZAKHIDNYI BUH”", description: "Wind Power for auto field irrigation", date: "July 2023" },
+  { id: "02", img: img02, img2: img02_2x, city: "Zhytomyr city", title: "Private Enterprise “Bosch”", description: "Solar Panels for industrial use", date: "November 2023" },
+  { id: "03", img: img03, img2: img03_2x, city: "Rivne city", title: "Private Enterprise “Biotech”", description: "Thermal modules", date: "October 2023" },
+  { id: "04", img: img04, img2: img04_2x, city: "Kherson city", title: "Private Enterprise “HealthyFarm”", description: "Wind power", date: "September 2021" },
+  { id: "05", img: img05, img2: img05_2x, city: "Zaporizhia city", title: "Private Enterprise “Biotech”", description: "Mini nuclear stations", date: "May 2021" }
 ];
 
 const Cases = () => {

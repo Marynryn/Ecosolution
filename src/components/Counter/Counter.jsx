@@ -42,7 +42,7 @@ line-height: 48px;
 }
 `;
 const Counter = () => {
-    const targetDate = new Date('2024-07-02T10:22:00');
+    const targetDate = new Date('1990-06-02T10:22:00');
     const initialTimeDiff = Math.floor((Date.now() - targetDate.getTime()) / 1000);
 
     const [count, setCount] = useState(initialTimeDiff);

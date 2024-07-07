@@ -104,7 +104,7 @@ font-size: 16px;
 const SlideItem = ({ props, onNext }) => {
   return (
     <Box >
-      <Image src={`${props.img}`} alt={props.description} />
+      <Image src={`${props.img}`} srcSet={`${props.img} 1x, ${props.img2} 2x`} alt={props.description} />
       <Container>
         <ItemContainer>
           <TitleContainer>

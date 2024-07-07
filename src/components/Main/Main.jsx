@@ -3,8 +3,12 @@ import Line from 'components/Line/Line';
 import Paragraph from 'components/Paragraph/Paragraph';
 import React from 'react'
 import styled from 'styled-components';
-import heroImage from "img/mobile/wind-turbine-clean-energy.png"
-
+import mediumImage1x from "img/tablet/main/wind-turbine-clean-energy1x.webp";
+import mediumImage2x from "img/tablet/main/wind-turbine-clean-energy2x.webp";
+import smallImage1x from "img/mobile/wind-turbine-clean-energy1x.webp";
+import smallImage2x from "img/mobile/wind-turbine-clean-energy2x.webp";
+import largeImage1x from "img/desktop/main/wind-turbine-clean-energy1x.webp";
+import largeImage2x from "img/desktop/main/wind-turbine-clean-energy2x.webp";
 const Title = styled.h2`
    font-size: 36px;
 font-style: normal;
@@ -78,7 +82,7 @@ const BoxButton = styled.div`
 width: 363px;
 }
 `;
-const Image = styled.img`
+const Image = styled.picture`
 width: 100%;
 height: 200px;
 @media (min-width: 480px){
@@ -107,8 +111,32 @@ const Main = ({ scrollToCases }) => {
                 <TextBox><Paragraph>office@ecosolution.com</Paragraph>
                     <ParagraphBox><Paragraph>ecosolution &copy; 2023</Paragraph></ParagraphBox></TextBox>
             </Container>
-            <Image src={heroImage} alt="wind turbine" />
+            <Image>
+                <source
+                    srcSet={`
+    ${largeImage1x} 1x, 
+    ${largeImage2x} 2x
+  `}
+                    media="(min-width: 1280px)"
+                />
+                <source
+                    srcSet={`
+    ${mediumImage1x} 1x, 
+    ${mediumImage2x} 2x
+  `}
+                    media="(min-width: 768px)"
+                />
+                <source
+                    srcSet={`
+    ${smallImage1x} 1x, 
+    ${smallImage2x} 2x
+  `}
+                    media="(min-width: 375px)"
+                />
+                <img src={smallImage1x} alt="wind turbine" />
+            </Image>
+
         </div>
     )
 }
-export default Main;
+export default Main; 

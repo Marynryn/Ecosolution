@@ -1,9 +1,18 @@
-import { Box, StyledSvg, Text } from 'components/Phone/Phone';
+import { Box, Text } from 'components/Phone/Phone';
 import React from 'react';
 import sprite from "../../svg/symbol-defs.svg";
 import Paragraph from 'components/Paragraph/Paragraph';
 import styled from 'styled-components';
 
+const StyledSvg = styled.svg`
+  width: 24px;
+  height: 24px;
+  stroke: var(--main-color);
+  fill: transparent;
+  &:hover {
+    stroke: var(--accent-color);
+  }
+`;
 const EmailLink = styled.a`
   display: flex;
   gap: 8px;

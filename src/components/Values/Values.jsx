@@ -2,14 +2,19 @@ import React from 'react'
 import styled from 'styled-components';
 import sprite from "../../svg/symbol-defs.svg";
 import Line from 'components/Line/Line';
-import img1 from 'img/tablet/wind-farms-fields 1.png';
-import img2 from 'img/tablet/man-worker-firld-by-solar-panels 1.png';
-
+import mediumImage1x from "img/tablet/values/wind-farms-fields1x.webp";
+import mediumImage2x from "img/tablet/values/wind-farms-fields2x.webp";
+import mediumImage2_1x from "img/tablet/values/man-worker-firld-by-solar-panels1x.webp";
+import mediumImage2_2x from "img/tablet/values/man-worker-firld-by-solar-panels2x.webp";
+import largeImage1x from "img/desktop/values/wind-farms-fields1x.webp";
+import largeImage2x from "img/desktop/values/wind-farms-fields2x.webp";
+import largeImage2_1x from "img/desktop/values/man-worker-firld-by-solar-panels1x.webp";
+import largeImage2_2x from "img/desktop/values/man-worker-firld-by-solar-panels2x.webp";
 const values = [
   { title: 'Openness', description: 'to the world, people, new ideas and projects', svg: "icon-maximize-circle" },
   { title: 'Responsibility', description: 'we are aware that the results of our work have an impact on our lives and the lives of future generations', svg: "icon-global-edit" },
-  { type: 'image', src: img1, alt: "wind-farms-fields" },
-  { type: 'image', src: img2, alt: "man-worker-firld-by-solar-panels" },
+  { type: 'image', mediumImage1x: mediumImage1x, mediumImage2x: mediumImage2x, largeImage1x: largeImage1x, largeImage2x: largeImage2x, alt: "wind-farms-fields" },
+  { type: 'image', mediumImage1x: mediumImage2_1x, mediumImage2x: mediumImage2_2x, largeImage1x: largeImage2_1x, largeImage2x: largeImage2_2x, alt: "man-worker-firld-by-solar-panels" },
   { title: 'Innovation', description: 'we use the latest technology to implement non-standard solutions', svg: "icon-cpu-charge" },
 
   { title: 'Quality', description: 'we do not strive to be the first among others, but we want to be the best in our business', svg: "icon-ranking" },
@@ -93,7 +98,7 @@ const Container = styled.div`
     }
 `;
 
-const ImageItem = styled.img`
+const ImageItem = styled.picture`
 display: none;
 @media (min-width: 768px){
     grid-column: span 2;
@@ -110,7 +115,26 @@ const Values = () => {
     <ValuesContainer>
       {values.map((value, index) => (
         value.type === 'image' ? (
-          <ImageItem key={index} src={`${value.src}`} alt={value.alt} />
+          <ImageItem key={index} >
+
+            <source
+              srcSet={`
+    ${value.largeImage1x} 1x, 
+    ${value.largeImage2x} 2x
+  `}
+              media="(min-width: 1280px)"
+            />
+            <source
+              srcSet={`
+    ${value.mediumImage1x} 1x, 
+    ${value.mediumImage2x} 2x
+  `}
+              media="(min-width: 768px)"
+            />
+
+            <img src={value.mediumImage1x} alt={value.alt} />
+          </ImageItem>
+
         ) : (
           <ValueItem key={index}>
             <Container>
@@ -124,7 +148,7 @@ const Values = () => {
           </ValueItem>
         )
       ))}
-    </ValuesContainer>
+    </ValuesContainer >
   );
 }
 

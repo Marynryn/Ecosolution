@@ -18,6 +18,7 @@ gap:24px;
 }
 @media (min-width: 1280px){
     gap: 48px;
+    margin-top:120px;
 }
 `;
 
