@@ -11,9 +11,9 @@ const StyledSvg = styled.svg`
 
 const ContainerSvg = styled.div`
     border-radius: 100px;
-    background-color: ${({ bgcolor }) => bgcolor}; 
+    background-color: ${({ $bgcolor }) => $bgcolor}; 
     display: flex;
-    padding: ${({ pad }) => pad};  
+    padding: ${({ $pad }) => $pad};  
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -21,7 +21,7 @@ const ContainerSvg = styled.div`
 
 const SvgContainer = ({ svgId = "icon-arrow-left", size = "16px", backgroundColor = 'var(--accent-color)', padding = "8px", onClick }) => {
     return (
-        <ContainerSvg bgcolor={backgroundColor} pad={padding} onClick={onClick}>
+        <ContainerSvg $bgcolor={backgroundColor} $pad={padding} onClick={onClick}>
             <StyledSvg size={size}>
                 <use href={`${sprite}#${svgId}`} />
             </StyledSvg>

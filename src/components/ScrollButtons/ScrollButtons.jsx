@@ -2,6 +2,7 @@ import SvgContainer from 'components/SvgContainer/SvgContainer';
 import React from 'react'
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
+
 const Container = styled.div`
 display: flex;
 margin-bottom: 7px;
@@ -11,7 +12,7 @@ gap:12px;
 }
 @media (min-width: 1280px){
     gap: 24px;
- 
+
 }
 `;
 const Button = styled.div`
@@ -24,7 +25,6 @@ border: 1px solid var(--main-color);
     border-color: var(--accent-color);
     svg{
         stroke: var(--accent-color);
-  
     }
  }
  @media (min-width: 1280px){

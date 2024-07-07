@@ -8,7 +8,6 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 const MainWrapper = styled.main`
- 
   text-align: center; 
   margin-top: 190px;
   @media (min-width: 768px) {
@@ -27,7 +26,6 @@ const Section = styled.section`
   }
     @media (min-width: 1280px){
 margin-bottom: 120px;
-
     }
 `;
 

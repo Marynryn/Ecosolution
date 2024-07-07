@@ -63,7 +63,6 @@ margin-bottom: 8px;
  margin-left: -5px;
  &:hover{
     p{color:var(--accent-color);}
-    
     svg{
         stroke: var(--accent-color);
     }
@@ -108,7 +107,7 @@ const Modal = ({ onClose, children }) => {
         };
     }, [handleCloseModal]);
     return (
-        <ModalBackdrop >
+        <ModalBackdrop onClick={handleBackdropClick}>
             <Box onClick={handleBackdropClick}>
                 <ModalContent >
                     <CloseButton onClick={handleCloseModal}>

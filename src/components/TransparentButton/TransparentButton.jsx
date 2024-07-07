@@ -15,7 +15,6 @@ justify-content: center;
 align-items: center;
 gap: 12px;
 font-size: 16px;
-/* margin: 24px auto; */
 &:hover{
     border-color: var(--main-color);
     background-color: var(--main-color);

@@ -19,7 +19,6 @@ const Button = styled.div`
     }
  }
   @media (min-width: 768px){
-    
     margin-bottom: 21px;
   }
 `;

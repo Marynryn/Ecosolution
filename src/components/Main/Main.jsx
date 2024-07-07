@@ -96,7 +96,6 @@ const Main = ({ scrollToCases }) => {
     return (
         <div>
             <Box>
-
                 <Title>
                     RENEWABLE ENERGY FOR ANY TASK
                 </Title>

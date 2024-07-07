@@ -7,7 +7,6 @@ import { Circle } from 'components/Faq/Faq';
 import Paragraph from 'components/Paragraph/Paragraph';
 
 const Container = styled.header`
-   
     padding: 36px 20px;
     position: fixed;
     z-index: 5;   
@@ -16,16 +15,13 @@ const Container = styled.header`
    text-align: center;
     width: calc(100% - 40px);
     transition: background-color 0.3s ease; 
-
     &.scrolled {
         background-color: var(--white);
     }
-
     @media (min-width: 768px) {
         padding: 36px 30px 40px 30px;
       width: calc(100% - 60px)
     }
-
     @media (min-width: 1280px) {
         padding: 24px 20px;
         margin: 0 auto;
@@ -36,14 +32,12 @@ const BoxHeader = styled.div`
  display: flex;
     justify-content: space-between;
     align-items: center;
-   
       @media (min-width: 480px){
 width: 440px;
 margin: 0 auto;
     }
     @media (min-width: 768px){
-         width: 708px;
-         
+         width: 708px;  
     }
       @media (min-width: 1280px){
          width: 1240px;
@@ -60,7 +54,6 @@ const BurgerButton = styled.button`
     justify-content: center;
     padding: 0;
     outline: none;
-
     &:hover {
         background-color: var(--accent-color);
     }
@@ -77,7 +70,6 @@ const StyledSvgArrow = styled.svg`
   height: 10px;
   text-align: center;
   padding: 2px;
-
 `;
 const Box = styled.div`
 display: flex;
@@ -88,9 +80,7 @@ display: none;
 @media (min-width: 768px){
     display: flex;
     width: 140px;
-}
-
-`;
+}`;
 const Header = ({ setModalOpen, modalOpen, scrollToContact }) => {
     const [isScrolled, setIsScrolled] = useState(false);
 

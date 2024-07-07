@@ -1,12 +1,10 @@
 import Line from 'components/Line/Line';
 import Logo from 'components/Logo/Logo';
 import Paragraph from 'components/Paragraph/Paragraph';
-
 import SocialIcons from 'components/SocialIcons/SocialIcons';
 import SvgContainer from 'components/SvgContainer/SvgContainer';
 import React from 'react'
 import styled from 'styled-components';
-
 
 const Box = styled.div`
 display: flex;
@@ -36,7 +34,6 @@ border-radius: 100px;
     background-color: var(--main-color);
     svg{
         stroke: var(--accent-color);
-
     }
 }
 `;
@@ -50,7 +47,6 @@ margin: 24px 0;
 `;
 const BoxIcon = styled.div`
 display: none;
-
 @media (min-width: 768px) {
     display: block;
 }
@@ -68,8 +64,6 @@ align-items: center;
 }
 `;
 const Container = styled.div`
-
-
 @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;

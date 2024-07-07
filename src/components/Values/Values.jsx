@@ -10,6 +10,8 @@ import largeImage1x from "img/desktop/values/wind-farms-fields1x.webp";
 import largeImage2x from "img/desktop/values/wind-farms-fields2x.webp";
 import largeImage2_1x from "img/desktop/values/man-worker-firld-by-solar-panels1x.webp";
 import largeImage2_2x from "img/desktop/values/man-worker-firld-by-solar-panels2x.webp";
+
+
 const values = [
   { title: 'Openness', description: 'to the world, people, new ideas and projects', svg: "icon-maximize-circle" },
   { title: 'Responsibility', description: 'we are aware that the results of our work have an impact on our lives and the lives of future generations', svg: "icon-global-edit" },
@@ -58,7 +60,6 @@ const ValueTitle = styled.h3`
   text-transform: uppercase;
    @media (min-width: 1280px){
      font-size: 32px;
-
   line-height: 48px;
    }
 `;
@@ -84,7 +85,6 @@ const StyledSvg = styled.svg`
   @media (min-width:1280px){
     width: 24px;
     height: 24px;
-  
   }
 `;
 
