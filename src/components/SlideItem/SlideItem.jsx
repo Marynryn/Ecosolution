@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Line from 'components/Line/Line';
-import SvgContainer from 'components/SvgContainer/SvgContainer';
+import SvgContainer from 'components/ui/SvgContainer/SvgContainer';
 
 const Button = styled.div`
  margin-bottom: 21px;

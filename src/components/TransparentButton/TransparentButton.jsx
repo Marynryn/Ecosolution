@@ -1,8 +1,8 @@
 import React from 'react'
 
 import styled from 'styled-components';
-import Paragraph from 'components/Paragraph/Paragraph';
-import SvgContainer from 'components/SvgContainer/SvgContainer';
+import Paragraph from 'components/ui/Paragraph/Paragraph';
+import SvgContainer from 'components/ui/SvgContainer/SvgContainer';
 
 const Button = styled.button`
 border: 1px solid var(--accent-color);

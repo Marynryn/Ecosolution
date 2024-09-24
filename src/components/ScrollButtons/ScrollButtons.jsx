@@ -1,4 +1,4 @@
-import SvgContainer from 'components/SvgContainer/SvgContainer';
+import SvgContainer from 'components/ui/SvgContainer/SvgContainer';
 import React from 'react'
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';

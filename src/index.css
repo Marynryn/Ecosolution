@@ -65,3 +65,31 @@ ul {
   --black: #292d32;
   --error-color: #d28b8b;
 }
+section {
+  padding-bottom: 36px;
+  scroll-margin-top: 148px;
+  text-align: center;
+}
+.hero {
+  margin-top: 190px;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding-bottom: 100px;
+  }
+  .hero {
+    padding-top: 204px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  section {
+    padding-bottom: 120px;
+  }
+  .hero {
+    padding-top: 240px;
+  }
+}
+.cases {
+  text-align: left;
+}

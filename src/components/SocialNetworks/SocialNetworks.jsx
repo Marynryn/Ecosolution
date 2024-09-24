@@ -1,4 +1,4 @@
-import Paragraph from 'components/Paragraph/Paragraph'
+import Paragraph from 'components/ui/Paragraph/Paragraph'
 import SocialIcons from 'components/SocialIcons/SocialIcons'
 import React from 'react'
 import styled from 'styled-components';

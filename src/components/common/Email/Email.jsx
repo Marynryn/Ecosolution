@@ -1,6 +1,6 @@
 import { Box, Text } from 'components/Phone/Phone';
 import React from 'react';
-import sprite from "../../svg/symbol-defs.svg";
+import sprite from "svg/symbol-defs.svg";
 import Paragraph from 'components/ui/Paragraph/Paragraph';
 import styled from 'styled-components';
 
@@ -13,13 +13,14 @@ const StyledSvg = styled.svg`
     stroke: var(--accent-color);
   }
 `;
-const MapLink = styled.a`
+const EmailLink = styled.a`
   display: flex;
   gap: 8px;
   align-items: center;
   text-decoration: none;
   color: inherit;
-  margin-top: 8px;
+margin-top: 8px;
+width: 100%;
   &:hover ${StyledSvg} {
     stroke: var(--accent-color);
   }
@@ -28,18 +29,18 @@ margin-top: 16px;
 }
 `;
 
-const Address = () => {
+const Email = () => {
   return (
-    <Box>
-      <Paragraph>Address:</Paragraph>
-      <MapLink href="https://maps.google.com/?q=79005+Ukraine+Lviv+street+Shota+Rustaveli+7" target="_blank" rel="noopener noreferrer">
+    <Box >
+      <Paragraph>Email:</Paragraph>
+      <EmailLink href="mailto:office@ecosolution.com">
         <StyledSvg>
-          <use href={`${sprite}#icon-map`} />
+          <use href={`${sprite}#icon-sms`} />
         </StyledSvg>
-        <Text>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Text>
-      </MapLink>
+        <Text>office@ecosolution.com</Text>
+      </EmailLink>
     </Box>
   );
 }
 
-export default Address;
+export default Email;
