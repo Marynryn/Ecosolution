@@ -2,10 +2,11 @@ import Logo from 'components/ui/Logo/Logo';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sprite from "../../svg/symbol-defs.svg";
-import Button from 'components/ui/Button/Button';
+
 import { Circle } from 'sections/Faq/Faq';
 import Paragraph from 'components/ui/Paragraph/Paragraph';
-
+import content from 'data/common.json';
+import { ScrollButton } from 'components/ui/ScrollButton/ScrollButton';
 const Container = styled.header`
     padding: 36px 20px;
     position: fixed;
@@ -57,6 +58,7 @@ const BurgerButton = styled.button`
     &:hover {
         background-color: var(--accent-color);
     }
+    &:focus {outline: auto}
 `;
 
 const StyledSvg = styled.svg`
@@ -81,9 +83,9 @@ display: none;
     display: flex;
     width: 140px;
 }`;
-const Header = ({ setModalOpen, modalOpen, scrollToContact }) => {
+const Header = ({ setModalOpen, modalOpen }) => {
     const [isScrolled, setIsScrolled] = useState(false);
-
+    console.log(modalOpen)
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset;
@@ -99,6 +101,7 @@ const Header = ({ setModalOpen, modalOpen, scrollToContact }) => {
 
     const toggleModal = () => {
         setModalOpen(!modalOpen);
+        console.log(modalOpen)
     };
 
     const containerClass = isScrolled ? 'scrolled' : '';
@@ -109,19 +112,20 @@ const Header = ({ setModalOpen, modalOpen, scrollToContact }) => {
             <BoxHeader>
                 <Logo />
                 <Box>
-                    <BurgerButton onClick={toggleModal}>
+                    <BurgerButton onClick={toggleModal} type='button' aria-label={content.header.ariaLabel}>
                         <StyledSvg width={16} height={16}>
                             <use href={`${sprite}#icon-menu`} />
                         </StyledSvg>
                     </BurgerButton>
                     <ButtonBox>
-                        <Button onClick={scrollToContact}><Paragraph>Get in touch</Paragraph>
+                        <ScrollButton href={content.header.href} >
+                            <Paragraph>{content.header.button}</Paragraph>
                             <Circle>
                                 <StyledSvgArrow >
                                     <use href={`${sprite}#icon-arrow-top`} />
                                 </StyledSvgArrow>
                             </Circle>
-                        </Button>
+                        </ScrollButton>
                     </ButtonBox>
                 </Box>
             </BoxHeader>

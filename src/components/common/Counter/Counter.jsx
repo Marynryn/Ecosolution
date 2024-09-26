@@ -1,7 +1,7 @@
 import { formatNumberWithDots } from 'helpers/formatNumberWithDots';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
+import content from 'data/electricity.json';
 const CounterWrapper = styled.div`
   font-size: 2em;
   font-weight: bold;
@@ -32,6 +32,7 @@ font-size: 48px;
 font-style: normal;
 font-weight: 700;
 line-height: 48px;
+min-width:290px;
 @media (min-width: 768px){
     font-size: 100px;
     line-height: 100px;
@@ -57,7 +58,7 @@ const Counter = () => {
 
     return <CounterWrapper>
         <Timer>{formatNumberWithDots(count)}</Timer>
-        <CounterTitle>kWh</CounterTitle>
+        <CounterTitle>{content.subtitle}</CounterTitle>
     </CounterWrapper>;
 };
 

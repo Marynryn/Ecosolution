@@ -132,7 +132,7 @@ const Cases = () => {
   };
 
   return (
-    <section className='cases'>
+    <section id='cases' className='cases'>
       <Container>
 
         <Box>

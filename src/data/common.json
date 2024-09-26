@@ -1,0 +1,20 @@
+{
+  "header": {
+    "button": "Get in touch",
+    "ariaLabel": "button to open burger menu",
+    "href": "contacts"
+  },
+  "burgerMenu": {
+    "navItems": [
+      { "name": "Main", "id": "main" },
+      { "name": "About", "id": "about" },
+      { "name": "Cases", "id": "cases" },
+      { "name": "FAQ", "id": "faq" },
+      { "name": "Contact Us", "id": "contact" }
+    ],
+    "ariaLabel": "arrow-top",
+    "ariaLabelClose": "icon-x",
+    "button": "close"
+  },
+  "learnMore": "Learn More"
+}

@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { schema } from 'schema/schema';
 import toast from 'react-hot-toast';
 import Line from 'components/Line/Line';
-import TransparentButton from 'components/TransparentButton/TransparentButton';
+import TransparentButton from 'components/ui/TransparentButton/TransparentButton';
 
 const FormContainer = styled.form`
   background-color: var(--accent-background);

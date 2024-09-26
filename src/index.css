@@ -10,14 +10,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   width: 100%;
-  overflow-x: hidden;
 }
+
 p {
   font-family: "Fira Sans", sans-serif;
 }
 ul,
-link {
+a,
+li {
   list-style: none;
+  text-decoration: none;
 }
 
 ul {
@@ -71,7 +73,7 @@ section {
   text-align: center;
 }
 .hero {
-  margin-top: 190px;
+  padding-top: 190px;
 }
 
 @media screen and (min-width: 768px) {
@@ -87,7 +89,7 @@ section {
     padding-bottom: 120px;
   }
   .hero {
-    padding-top: 240px;
+    padding-top: 244px;
   }
 }
 .cases {

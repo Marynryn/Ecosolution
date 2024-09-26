@@ -1,5 +1,5 @@
-import ButtonLeanMore from 'components/ButtonLearnMore/ButtonLeanMore';
-import Line from 'components/Line/Line';
+import ButtonLeanMore from 'components/common/ButtonLearnMore/ButtonLeanMore';
+
 import Paragraph from 'components/ui/Paragraph/Paragraph';
 import React from 'react'
 import styled from 'styled-components';
@@ -10,6 +10,8 @@ import smallImage2x from "img/mobile/wind-turbine-clean-energy2x.webp";
 import largeImage1x from "img/desktop/main/wind-turbine-clean-energy1x.webp";
 import largeImage2x from "img/desktop/main/wind-turbine-clean-energy2x.webp";
 import { Container } from 'components/ui/Container/Container';
+import content from 'data/main.json';
+
 const Title = styled.h1`
    font-size: 36px;
 font-style: normal;
@@ -34,11 +36,11 @@ const ContainerContacts = styled.div`
 display: flex;
 flex-direction: column;
 gap: 8px;
-margin-top: 24px;
+margin-top: 48px;
 align-items: center;
 margin-bottom: 36px;
 @media (min-width: 768px){
-   
+   margin-top: 42px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -49,6 +51,16 @@ margin-bottom: 36px;
 
 `;
 const Box = styled.div`
+position: relative; 
+::after{
+position: absolute;
+content: "";
+width: 100%;
+height: 1px;
+bottom: -26px;
+left: 0;
+background-color: var(--accent-color);
+}
 
 @media (min-width: 768px) {
 display: grid;
@@ -58,6 +70,7 @@ gap: 24px;
 @media (min-width: 1280px){
 gap: 296px;
 }
+
 }
 `;
 const ParagraphBox = styled.div`
@@ -83,7 +96,7 @@ const BoxButton = styled.div`
 width: 363px;
 }
 `;
-const Image = styled.picture`
+const Image = styled.img`
 width: 100%;
 height: 200px;
 @media (min-width: 480px){
@@ -93,26 +106,26 @@ height: 200px;
     height: 584px;
 }
 `;
-const Hero = ({ scrollToCases }) => {
+const Hero = () => {
     return (
-        <section className='hero'>
+        <section id='main' className='hero'>
             <Container>
                 <Box>
                     <Title>
-                        RENEWABLE ENERGY FOR ANY TASK
+                        {content.title}
                     </Title>
                     <div>
                         <BoxButton>
-                            <Paragraph>Development and implementation of renewable non-polluting energy sources, generating power generation using energy wind, sun, water, biomass</Paragraph></BoxButton>
-                        <ButtonLeanMore onClick={scrollToCases} /></div>
+                            <Paragraph>{content.text}</Paragraph></BoxButton>
+                        <ButtonLeanMore /></div>
                 </Box>
-                <Line />
+
                 <ContainerContacts >
-                    <div><Paragraph>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Paragraph></div>
-                    <TextBox><Paragraph>office@ecosolution.com</Paragraph>
-                        <ParagraphBox><Paragraph>ecosolution &copy; 2023</Paragraph></ParagraphBox></TextBox>
+                    <div><Paragraph>{content.contacts.address}</Paragraph></div>
+                    <TextBox><Paragraph>{content.contacts.email}</Paragraph>
+                        <ParagraphBox><Paragraph>{content.contacts.copyright}</Paragraph></ParagraphBox></TextBox>
                 </ContainerContacts>
-                <Image>
+                <picture>
                     <source
                         srcSet={`
     ${largeImage1x} 1x, 
@@ -134,8 +147,8 @@ const Hero = ({ scrollToCases }) => {
   `}
                         media="(min-width: 375px)"
                     />
-                    <img src={smallImage1x} alt="wind turbine" />
-                </Image>
+                    <Image src={smallImage1x} alt={content.alt} />
+                </picture>
             </Container>
         </section>
     )

@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
-import sprite from "../../../svg/symbol-defs.svg"
-import Line from 'components/Line/Line';
+import sprite from "svg/symbol-defs.svg"
 
+import content from 'data/common.json'
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -19,18 +19,29 @@ backdrop-filter: blur(2px);
 
 const ModalContent = styled.div`
   background: var(--menu-color);
+  position: relative;
   backdrop-filter: blur(12.5px);
   border-radius: 25px;
   padding: 24px;
 margin: 0 0 0 auto;
  width: 272px;
  height: calc(100% - 120px);
+  
   overflow-y: auto;
-  position: relative;
+ 
   @media (min-width: 768px) {
  width: 317px;
 
   }
+  ::before{
+    content: "";
+    position: absolute;
+    top: 56px;
+    left:24px;
+    background-color:var(--white) ;
+    width:calc(100% - 48px);
+    height: 1px;
+ }
 `;
 const Box = styled.div`
 display: flex;
@@ -55,18 +66,20 @@ margin: 36px auto;
 `;
 const CloseButton = styled.button`
 margin-bottom: 8px;
+cursor: pointer;
   border: none;
   background-color: transparent ;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding:0;
  margin-left: -5px;
- &:hover{
+ &:hover, &:focus{
     p{color:var(--accent-color);}
     svg{
         stroke: var(--accent-color);
     }
  }
+
 `;
 const StyledSvg = styled.svg`
     stroke: var(--white);
@@ -110,13 +123,13 @@ const Modal = ({ onClose, children }) => {
         <ModalBackdrop onClick={handleBackdropClick}>
             <Box onClick={handleBackdropClick}>
                 <ModalContent >
-                    <CloseButton onClick={handleCloseModal}>
-                        <StyledSvg width={20} height={20} >
+                    <CloseButton onClick={handleCloseModal} type='button'>
+                        <StyledSvg width={20} height={20} aria-label={content.burgerMenu.ariaLabelClose}>
                             <use href={`${sprite}#icon-x`} />
                         </StyledSvg>
-                        <WordClose>close</WordClose>
+                        <WordClose>{content.burgerMenu.button}</WordClose>
                     </CloseButton>
-                    <Line color={"var(--white)"} />
+
                     {children}
                 </ModalContent>
             </Box>

@@ -7,8 +7,9 @@ import styled from 'styled-components';
 const Link = styled.a`
     display: inline-flex;
     align-items: center;
+    transition: all 300ms ease-in-out;
     gap:4px;
-    &:hover{
+    &:hover, &:focus{
         cursor: pointer;
         svg{
 

@@ -25,7 +25,7 @@ gap:24px;
 
 const ContactUs = () => {
     return (
-        <section>
+        <section id='contacts'>
             <Container>
                 <Subtitle>Contact Us</Subtitle>
                 <ContactBox>

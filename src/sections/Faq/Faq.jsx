@@ -123,7 +123,7 @@ const Faq = ({ scrollToContact }) => {
   };
 
   return (
-    <section>
+    <section id='faq'>
       <Container>
         <FAQContainer>
           <BoxSubtitle >

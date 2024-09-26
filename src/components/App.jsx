@@ -31,7 +31,7 @@ export const App = () => {
     <Footer />
     {modalOpen && (
       <Modal onClose={() => setModalOpen(false)}>
-        <ModalMenu />
+        <ModalMenu onClose={() => setModalOpen(false)} />
       </Modal>
     )}
     <Toaster position="top-right" reverseOrder={false} />
