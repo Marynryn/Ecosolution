@@ -157,7 +157,7 @@ const Values = () => {
                 media="(min-width: 768px)"
               />
 
-              <Image src={value.mediumImage1x} alt={value.alt} />
+              <Image src={value.mediumImage1x} alt={value.alt} loading="lazy" />
             </picture>
           </ImageItem>
         ) : (

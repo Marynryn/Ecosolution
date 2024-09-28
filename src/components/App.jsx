@@ -2,7 +2,7 @@
 import Header from "../layout/Header/Header";
 import { useState } from "react";
 import Modal from "./ui/Modal/Modal";
-import ModalMenu from "./ModalMenu/ModalMenu";
+import ModalMenu from "./common/ModalMenu/ModalMenu";
 import Footer from "../layout/Footer/Footer";
 import { Toaster } from "react-hot-toast";
 import About from "sections/About/About";

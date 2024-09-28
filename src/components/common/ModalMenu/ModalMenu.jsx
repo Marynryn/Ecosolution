@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import sprite from '../../svg/symbol-defs.svg';
+import sprite from 'svg/symbol-defs.svg';
 import SocialIcons from 'components/ui/SocialIcons/SocialIcons';
 import content from 'data/common.json';
 import { ScrollButton } from 'components/ui/ScrollButton/ScrollButton';

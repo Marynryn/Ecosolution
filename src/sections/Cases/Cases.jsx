@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
-import ScrollButtons from 'components/ScrollButtons/ScrollButtons';
+import ScrollButtons from 'components/common/ScrollButtons/ScrollButtons';
 import Subtitle from 'components/ui/Subtitle/Subtitle';
 import img01 from 'img/cards/01_1x.webp';
 import img02 from 'img/cards/02_1x.webp';
@@ -15,10 +15,9 @@ import img04_2x from 'img/cards/04_2x.webp';
 import img05_2x from 'img/cards/05_2x.webp';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SlideItem from 'components/SlideItem/SlideItem';
-import Line from 'components/Line/Line';
+import SlideItem from 'components/common/SlideItem/SlideItem';
 import { Container } from 'components/ui/Container/Container';
-
+import content from 'data/cases.json';
 
 
 
@@ -34,23 +33,28 @@ const Box = styled.div`
 margin-bottom: 100px;
    }
 `;
-const LineBox = styled.div`
-display: none;
-  @media (min-width: 768px){
-    display: flex;
-    margin-right: 9px;
-  }
-  @media (min-width: 1280px){
-    margin-right: 161px;
-  }
-`;
+
 const ContainerBox = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
+  @media (min-width:768px){
+::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 65px;
+  background-color: var(--accent-color);
+}
+  }
   @media (min-width: 1280px){
-   
+   ::before{
+    height:96px;
+   }
   } 
 `;
 const BoxTitle = styled.div`
@@ -64,6 +68,13 @@ const Text = styled.p`
   font-style: normal;
   font-weight: 300;
   margin: 0;
+    @media (min-width: 768px){
+  
+    margin-left: 9px;
+  }
+  @media (min-width: 1280px){
+    margin-left: 161px;
+  }
   
 `;
 const Span = styled.span`
@@ -76,10 +87,18 @@ const StyledSlider = styled(Slider)`
    .slick-next::before {
     display: none ; 
   }
+  
+
+  .slick-slide {
+  
+    padding-right: -5px; 
+    padding-left: -5px;
+  }
   @media (min-width: 768px){
    
   .slick-list {
     margin: 0 -12px; 
+    
   }
   }
 `;
@@ -116,7 +135,9 @@ const Cases = () => {
         breakpoint: 767,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+
+
         }
       }
     ],
@@ -137,12 +158,12 @@ const Cases = () => {
 
         <Box>
           <BoxTitle >
-            <Subtitle>Successful cases of our company</Subtitle>
+            <Subtitle>{content.title}</Subtitle>
           </BoxTitle>
           <ContainerBox>
             <div style={{ display: "flex", alignItems: "end" }}>
-              <LineBox><Line width={"1px"} height={"65px"} /></LineBox>
-              <Text>0{currentSlide} <Span>/05</Span></Text></div>
+
+              <Text>{content.text.first}{currentSlide} <Span>{content.text.second}</Span></Text></div>
             <ScrollButtons onNext={nextSlide} onPrev={prevSlide} />
           </ContainerBox>
         </Box>

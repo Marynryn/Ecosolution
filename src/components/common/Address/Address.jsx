@@ -1,6 +1,6 @@
-import { Box, Text } from 'components/Phone/Phone';
+import { Box, Text } from 'components/common/Phone/Phone';
 import React from 'react';
-import sprite from "../../svg/symbol-defs.svg";
+import sprite from "svg/symbol-defs.svg";
 import Paragraph from 'components/ui/Paragraph/Paragraph';
 import styled from 'styled-components';
 

@@ -2,15 +2,17 @@ import React from 'react'
 import styled from 'styled-components';
 import Line from 'components/Line/Line';
 import SvgContainer from 'components/ui/SvgContainer/SvgContainer';
-
-const Button = styled.div`
+import content from 'data/cases.json';
+const Button = styled.button`
  margin-bottom: 21px;
-  display: flex;
+  display: inline-flex;
   height: 60px;
   width: 60px;
   border: none;
+  justify-content: center;
   background-color: var(--accent-color);
   border-radius: 100px;
+  transition: all 300ms ease-in-out;
    &:hover{
     background-color: var(--main-color);
     svg{
@@ -37,8 +39,9 @@ const Container = styled.div`
   }
 `;
 const Box = styled.div`
-  width: 100%;
+  width: calc(100% - 10px);
   margin: 24px auto 0;
+ 
   background-color: var(--accent-background);
   max-width: 342px;
   @media (min-width: 1280px){
@@ -110,7 +113,7 @@ const SlideItem = ({ props, onNext }) => {
             <Title>{props.city}</Title>
             <Title> {props.title}</Title>
           </TitleContainer>
-          <Button onClick={onNext} type='button'>
+          <Button onClick={onNext} type='button' aria-label={content.ariaLabel.buttonNext}>
             <SvgContainer svgId="icon-arrow-right-2" size="28px" backgroundColor='transparent' padding="16px" />
           </Button>
         </ItemContainer>

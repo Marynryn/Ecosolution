@@ -8,39 +8,35 @@ import Paragraph from 'components/ui/Paragraph/Paragraph';
 import content from 'data/common.json';
 import { ScrollButton } from 'components/ui/ScrollButton/ScrollButton';
 const Container = styled.header`
-    padding: 36px 20px;
+  width: 100%;
     position: fixed;
     z-index: 5;   
     top: 0;
     left: 0;
    text-align: center;
-    width: calc(100% - 40px);
     transition: background-color 0.3s ease; 
+    overflow: hidden;
     &.scrolled {
         background-color: var(--white);
     }
-    @media (min-width: 768px) {
-        padding: 36px 30px 40px 30px;
-      width: calc(100% - 60px)
-    }
-    @media (min-width: 1280px) {
-        padding: 24px 20px;
-        margin: 0 auto;
-       width: calc(100% - 40px)
-    }
+
 `;
 const BoxHeader = styled.div`
  display: flex;
+   padding: 36px 20px;
     justify-content: space-between;
     align-items: center;
+      width: calc(100% - 45px);
       @media (min-width: 480px){
 width: 440px;
 margin: 0 auto;
     }
     @media (min-width: 768px){
+         padding: 36px 30px 40px 30px;
          width: 708px;  
     }
       @media (min-width: 1280px){
+          padding: 24px 20px;
          width: 1240px;
     }
 `;
@@ -55,6 +51,7 @@ const BurgerButton = styled.button`
     justify-content: center;
     padding: 0;
     outline: none;
+    transition: all 300ms ease-in-out;
     &:hover {
         background-color: var(--accent-color);
     }

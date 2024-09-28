@@ -1,6 +1,6 @@
 import Paragraph from 'components/ui/Paragraph/Paragraph';
 import React from 'react';
-import sprite from "../../svg/symbol-defs.svg";
+import sprite from "svg/symbol-defs.svg";
 import styled from 'styled-components';
 
 

@@ -1,8 +1,8 @@
-import Address from 'components/Address/Address';
+import Address from 'components/common/Address/Address';
 import ContactForm from 'components/common/ContactForm/ContactForm';
 import Email from 'components/common/Email/Email';
-import Phone from 'components/Phone/Phone';
-import { SocialNetworks } from 'components/SocialNetworks/SocialNetworks';
+import Phone from 'components/common/Phone/Phone';
+import { SocialNetworks } from 'components/common/SocialNetworks/SocialNetworks';
 import { Container } from 'components/ui/Container/Container';
 import Subtitle from 'components/ui/Subtitle/Subtitle';
 import React from 'react'

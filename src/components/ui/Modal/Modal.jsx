@@ -73,6 +73,7 @@ cursor: pointer;
   align-items: center;
   padding:0;
  margin-left: -5px;
+ transition: all 300ms ease;
  &:hover, &:focus{
     p{color:var(--accent-color);}
     svg{
@@ -84,6 +85,7 @@ cursor: pointer;
 const StyledSvg = styled.svg`
     stroke: var(--white);
 margin-top: 3px;
+
  &:hover{
      stroke: var(--accent-color);
  }

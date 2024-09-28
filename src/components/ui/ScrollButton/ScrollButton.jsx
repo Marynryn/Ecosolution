@@ -23,7 +23,7 @@ const Button = styled(ScrollLink)`
   letter-spacing: -0.64px;
   margin: 0 auto;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+  transition: all 300ms ease-in-out;
   opacity: ${(props) => (props.$transparentButton ? "0.25" : "1")};
   
   ${(props) =>
@@ -47,7 +47,10 @@ const Button = styled(ScrollLink)`
     }
 
     svg {
-      stroke: var(--white);
+      transition: all 300ms ease-in-out;
+      stroke: ${(props) =>
+    props.$transparentButton ? "var(--white)" : " var(--main-color)"};
+     
       opacity: 1;
     }
   }

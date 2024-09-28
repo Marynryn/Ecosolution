@@ -28,6 +28,7 @@ justify-content: center;
 align-items: center;
 gap: 12px;
 font-size: 16px;
+transition: all 300ms ease-in-out;
 &:hover{
     border-color: var(--main-color);
     background-color: var(--main-color);

@@ -32,14 +32,17 @@ font-size: 48px;
 font-style: normal;
 font-weight: 700;
 line-height: 48px;
-min-width:290px;
+min-width:275px;
+text-align: left;
 @media (min-width: 768px){
     font-size: 100px;
     line-height: 100px;
+    min-width:590px;
 }
 @media (min-width: 1280px){
     font-size: 164px;
     line-height: 164px;
+    min-width:965px;
 }
 `;
 const Counter = () => {

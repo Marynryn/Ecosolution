@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import sprite from '../../svg/symbol-defs.svg';
+import sprite from 'svg/symbol-defs.svg';
 
 const Container = styled.div`
   margin: 16px 0;

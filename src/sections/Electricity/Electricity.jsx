@@ -1,20 +1,10 @@
 import Counter from 'components/common/Counter/Counter';
-import Line from 'components/Line/Line';
 import Subtitle from 'components/ui/Subtitle/Subtitle';
 import React from 'react';
 import styled from 'styled-components';
-import { useMediaQuery } from 'react-responsive';
 import { Container } from 'components/ui/Container/Container';
 import content from 'data/electricity.json';
 
-const LineContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 24px auto;
-   @media (min-width: 1280px){
-    margin : 17px auto;
-   }
-`;
 
 const Box = styled.div`
  width:286px;
@@ -58,7 +48,6 @@ const Electricity = () => {
         <Box>
           <Subtitle>{content.title}</Subtitle>
         </Box>
-
         <Counter />
       </Container>
     </section>
