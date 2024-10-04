@@ -1,14 +1,14 @@
 
-import Line from 'components/Line/Line';
 import QuestionAnswer from 'components/common/QuestionAnswer/QuestionAnswer';
 import Subtitle from 'components/ui/Subtitle/Subtitle';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Paragraph from 'components/ui/Paragraph/Paragraph';
-
 import { Container } from 'components/ui/Container/Container';
 import content from 'data/faq.json';
 import { ScrollButton } from 'components/ui/ScrollButton/ScrollButton';
+
+
 const FAQContainer = styled.div`
   margin: 0 auto;
    @media (min-width: 768px) {
@@ -35,14 +35,31 @@ const List = styled.ul`
   margin: 0;
   text-decoration: none;
  margin-bottom: 36px;
+ 
    @media (min-width: 768px) {
    
    margin: 0;
-   margin-bottom: -16px;
+  
+  
  }
 `;
+
 const Item = styled.li`
-  margin: 0 auto;
+ margin-top:32px;
+    position: relative;
+     &:first-child {
+    margin-top: 16px; 
+  }
+  ::before{
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+  
+   }
  
 `;
 const ButtonBox = styled.div`
@@ -94,7 +111,7 @@ const BoxSubtitle = styled.div`
 `;
 
 
-const Faq = ({ scrollToContact }) => {
+const Faq = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   const handleToggle = (index) => {
@@ -108,28 +125,27 @@ const Faq = ({ scrollToContact }) => {
           <BoxSubtitle >
             <Subtitle>{content.title}</Subtitle>
           </BoxSubtitle>
-          <div>
-            <Line />
-            <List>
-              {content.questionsAndAnswers.map((item, index) => (
-                <Item key={index}>
-                  <QuestionAnswer
-                    question={item.question}
-                    answer={item.answer}
-                    isVisible={openIndex === index}
-                    onClick={() => handleToggle(index)}
-                  />
-                  {index !== content.questionsAndAnswers.length - 1 && <Line />}
-                </Item>
-              ))}</List>
-          </div>
+
+          <List>
+            {content.questionsAndAnswers.map((item, index) => (
+              <Item key={index}>
+                <QuestionAnswer
+                  question={item.question}
+                  answer={item.answer}
+                  isVisible={openIndex === index}
+                  onClick={() => handleToggle(index)}
+                />
+
+              </Item>
+            ))}</List>
+
           <Box>
             <BoxTitle >
               <Subtitle>{content.subtitle}</Subtitle>
             </BoxTitle>
             <div>
               <Text>{content.text} </Text>
-              <ButtonBox><ScrollButton href={content.href}><Paragraph>Contact Us</Paragraph>
+              <ButtonBox><ScrollButton href={content.href}><Paragraph>{content.button}</Paragraph>
                 <Circle></Circle>
               </ScrollButton></ButtonBox></div>
           </Box>

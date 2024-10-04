@@ -13,6 +13,7 @@ const Button = styled.button`
   background-color: var(--accent-color);
   border-radius: 100px;
   transition: all 300ms ease-in-out;
+
    &:hover{
     background-color: var(--main-color);
     svg{
@@ -113,7 +114,7 @@ const SlideItem = ({ props, onNext }) => {
             <Title>{props.city}</Title>
             <Title> {props.title}</Title>
           </TitleContainer>
-          <Button onClick={onNext} type='button' aria-label={content.ariaLabel.buttonNext}>
+          <Button onClick={onNext} type='button' aria-label={content.ariaLabel.buttonNext} tabIndex="-1">
             <SvgContainer svgId="icon-arrow-right-2" size="28px" backgroundColor='transparent' padding="16px" />
           </Button>
         </ItemContainer>

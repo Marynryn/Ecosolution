@@ -2,7 +2,7 @@ import Paragraph from 'components/ui/Paragraph/Paragraph';
 import React from 'react';
 import sprite from "svg/symbol-defs.svg";
 import styled from 'styled-components';
-
+import content from 'data/contact.json';
 
 export const Box = styled.div`
 margin-bottom: 24px;
@@ -53,18 +53,18 @@ margin-top: 16px;
 const Phone = () => {
   return (
     <Box >
-      <Paragraph>Phone:</Paragraph>
-      <PhoneNumber href="tel:380981234567">
+      <Paragraph>{content.phone.title}</Paragraph>
+      <PhoneNumber href={content.phone.href1}>
         <StyledSvg>
           <use href={`${sprite}#icon-call`} />
         </StyledSvg>
-        <Text>38 (098) 12 34 567</Text>
+        <Text>{content.phone.number1}</Text>
       </PhoneNumber>
-      <PhoneNumber href="tel:380931234567">
+      <PhoneNumber href={content.phone.href2}>
         <StyledSvg>
           <use href={`${sprite}#icon-call`} />
         </StyledSvg>
-        <Text>38 (093) 12 34 567</Text>
+        <Text>{content.phone.number2}</Text>
       </PhoneNumber>
     </Box>
   );

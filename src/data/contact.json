@@ -1,0 +1,15 @@
+{
+  "title": "Contact Us",
+  "phone": {
+    "number1": "38 (098) 12 34 567",
+    "href1": "tel:380981234567",
+    "number2": "38 (093) 12 34 567",
+    "href2": "tel:380931234567",
+    "title": "Phone:"
+  },
+  "email": {
+    "title": "Email:",
+    "href": "mailto:office@ecosolution.com",
+    "email": "office@ecosolution.com"
+  }
+}

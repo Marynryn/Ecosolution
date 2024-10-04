@@ -168,7 +168,7 @@ const Cases = () => {
           </ContainerBox>
         </Box>
         <StyledSlider ref={sliderRef} {...settings}>
-          {cases.map(caseItem => (
+          {cases.map((caseItem) => (
             <SlideItem key={caseItem.id} props={caseItem} onNext={nextSlide} />
           ))}
         </StyledSlider>

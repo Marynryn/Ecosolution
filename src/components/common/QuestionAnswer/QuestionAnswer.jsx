@@ -2,12 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import sprite from 'svg/symbol-defs.svg';
 
-const Container = styled.div`
-  margin: 16px 0;
-   @media (min-width: 1280px){
-    margin: 24px 0;
-   }
-`;
 
 const Text = styled.p`
   margin: 0;
@@ -18,14 +12,23 @@ const Text = styled.p`
    }
 `;
 
-const Question = styled.div`
-  display: flex;
+const Question = styled.button`
+  display: inline-flex;
+  border: none;
+  background-color: transparent;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
   text-align: justify;
   cursor: pointer;
   letter-spacing: -0.72px;
+  transition: all 300ms ease-in-out;
+  padding: 0;
+  &:hover, &:focus{
+   svg{
+      scale: 1.2; }
+  }
+  @media (min-width: 768px){gap:16px;}
    @media (min-width: 1280px){gap:24px;}
 `;
 
@@ -40,6 +43,10 @@ const Answer = styled.p`
   &.active {
     display: block;
   }
+  @media (min-width: 768px){
+    margin-left: 32px;
+  }
+
    @media (min-width: 1280px){
     margin:24px 0 0 52px;
      font-size: 16px;
@@ -48,37 +55,33 @@ const Answer = styled.p`
     }
 `;
 
-const Icon = styled.div`
-  font-size: 24px;
-  color: var(--accent-color);
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  @media (min-width: 1280px){ width: 28px;
-  height: 28px;}
-`;
+
 
 const StyledSvg = styled.svg`
   stroke: var(--accent-color);
-  width: 16px;
+  min-width: 16px;
   height: 16px;
-   @media (min-width: 1280px){ width: 28px;
+    &:hover, &:focus{
+  
+     scale:1.2; }
+  
+   @media (min-width: 1280px){ min-width: 28px;
   height: 28px;}
 `;
 
 const QuestionAnswer = ({ question, answer, isVisible, onClick }) => {
   return (
-    <Container>
-      <Question onClick={onClick}>
-        <Icon>
-          <StyledSvg>
-            <use href={`${sprite}#${isVisible ? 'icon-minus' : 'icon-plus'}`} />
-          </StyledSvg>
-        </Icon>
+    <>
+      <Question type='button' onClick={onClick}>
+
+        <StyledSvg viewBox="0 0 16 16">
+          <use href={`${sprite}#${isVisible ? 'icon-minus' : 'icon-plus'}`} />
+        </StyledSvg>
+
         <Text>{question}</Text>
       </Question>
       <Answer className={isVisible ? 'active' : ''}>{answer}</Answer>
-    </Container>
+    </>
   );
 };
 

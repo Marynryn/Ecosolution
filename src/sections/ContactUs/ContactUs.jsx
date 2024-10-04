@@ -7,7 +7,7 @@ import { Container } from 'components/ui/Container/Container';
 import Subtitle from 'components/ui/Subtitle/Subtitle';
 import React from 'react'
 import styled from 'styled-components';
-
+import content from 'data/contact.json';
 
 const ContactBox = styled.div`
 margin-top:24px;
@@ -27,7 +27,7 @@ const ContactUs = () => {
     return (
         <section id='contacts'>
             <Container>
-                <Subtitle>Contact Us</Subtitle>
+                <Subtitle>{content.title}</Subtitle>
                 <ContactBox>
                     <div>
                         <Phone />
