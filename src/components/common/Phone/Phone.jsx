@@ -6,6 +6,7 @@ import content from 'data/contact.json';
 
 export const Box = styled.div`
 margin-bottom: 24px;
+text-align: left;
 @media (min-width:1280px){
 margin-top: 32px;
 }
@@ -15,7 +16,8 @@ const StyledSvg = styled.svg`
   height: 24px;
   stroke: var(--main-color);
   fill: transparent;
-  &:hover {
+    transition: all 300ms ease-in-out;
+  &:hover, &:focus {
     stroke: var(--accent-color);
   }
 `;
@@ -34,7 +36,7 @@ font-size: 24px;
 `;
 
 const PhoneNumber = styled.a`
-  display: flex;
+  display: inline-flex;
   gap: 8px;
   align-items: center;
   text-decoration: none;
@@ -54,13 +56,15 @@ const Phone = () => {
   return (
     <Box >
       <Paragraph>{content.phone.title}</Paragraph>
-      <PhoneNumber href={content.phone.href1}>
+      <PhoneNumber href={content.phone.href1} target="_blank"
+        rel="noopener noreferrer nofollow">
         <StyledSvg>
           <use href={`${sprite}#icon-call`} />
         </StyledSvg>
         <Text>{content.phone.number1}</Text>
       </PhoneNumber>
-      <PhoneNumber href={content.phone.href2}>
+      <PhoneNumber href={content.phone.href2} target="_blank"
+        rel="noopener noreferrer nofollow">
         <StyledSvg>
           <use href={`${sprite}#icon-call`} />
         </StyledSvg>

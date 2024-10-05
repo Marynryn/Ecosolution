@@ -10,11 +10,17 @@
       { "name": "About", "id": "about" },
       { "name": "Cases", "id": "cases" },
       { "name": "FAQ", "id": "faq" },
-      { "name": "Contact Us", "id": "contact" }
+      { "name": "Contact Us", "id": "contacts" }
     ],
     "ariaLabel": "arrow-top",
     "ariaLabelClose": "icon-x",
     "button": "close"
   },
-  "learnMore": "Learn More"
+  "learnMore": "Learn More",
+  "footer": {
+    "href": "main",
+    "address": "79005, Ukraine, Lviv, street Shota Rustaveli, 7",
+    "email": "office@ecosolution.com",
+    "copyright": "ecosolution © 2023"
+  }
 }

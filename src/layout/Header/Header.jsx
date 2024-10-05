@@ -82,7 +82,7 @@ display: none;
 }`;
 const Header = ({ setModalOpen, modalOpen }) => {
     const [isScrolled, setIsScrolled] = useState(false);
-    console.log(modalOpen)
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset;
@@ -98,7 +98,7 @@ const Header = ({ setModalOpen, modalOpen }) => {
 
     const toggleModal = () => {
         setModalOpen(!modalOpen);
-        console.log(modalOpen)
+
     };
 
     const containerClass = isScrolled ? 'scrolled' : '';

@@ -102,7 +102,7 @@ const BoxTitle = styled.div`
 `;
 const BoxSubtitle = styled.div`
  display: block;
- margin-bottom: 24px;
+ margin-bottom: 41px;
  text-align: left;
  @media (min-width: 768px) {
     display: none;

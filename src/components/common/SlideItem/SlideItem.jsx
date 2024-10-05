@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
-import Line from 'components/Line/Line';
+
 import SvgContainer from 'components/ui/SvgContainer/SvgContainer';
 import content from 'data/cases.json';
+
 const Button = styled.button`
  margin-bottom: 21px;
   display: inline-flex;
@@ -69,6 +70,17 @@ const TextContainer = styled.div`
   display: flex;
   margin-top: 12px;
   justify-content: space-between;
+  position:relative;
+  ::before{
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+   
+  }
      @media (min-width:1280px){
       margin-top: 24px;
      }
@@ -107,7 +119,7 @@ font-size: 16px;
 const SlideItem = ({ props, onNext }) => {
   return (
     <Box >
-      <Image src={`${props.img}`} srcSet={`${props.img} 1x, ${props.img2} 2x`} alt={props.description} />
+      <Image src={`${props.img}`} srcSet={`${props.img} 1x, ${props.img2} 2x`} alt={props.description} loading="lazy" />
       <Container>
         <ItemContainer>
           <TitleContainer>
@@ -118,7 +130,7 @@ const SlideItem = ({ props, onNext }) => {
             <SvgContainer svgId="icon-arrow-right-2" size="28px" backgroundColor='transparent' padding="16px" />
           </Button>
         </ItemContainer>
-        <Line />
+
         <TextContainer>
           <Text>{props.description}</Text>
           <Text>{props.date}</Text>

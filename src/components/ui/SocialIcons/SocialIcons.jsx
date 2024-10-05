@@ -6,7 +6,7 @@ const StyledIcon = styled.svg`
   fill: ${({ fill }) => fill || 'transparent'};
   stroke: ${({ stroke }) => stroke || 'var(--white)'};
   stroke-width: 2;
-  transition: stroke 0.3s;
+  transition: stroke 0.3s ease-in-out;
 
   &:hover {
     stroke: ${({ $hover }) => $hover || 'var(--accent-color)'};

@@ -22,6 +22,7 @@ const SvgLogo = styled.svg`
     fill: var(--main-color);
     width: 170px;
     height: 40px;
+     transition: all 300ms ease-in-out;
   &:hover{
     fill: var(--accent-color);
   };

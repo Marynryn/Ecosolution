@@ -5,7 +5,7 @@ export const schema = yup.object().shape({
   email: yup.string().email("Wrong Email").required("Email is required"),
   phone: yup
     .string()
-    .matches(/^\+(?:[0-9] ?){6,14}[0-9]$/, "Wrong Phone")
+    .matches(/^(380)(?:[0-9] ?){9}$/, "Wrong Phone")
     .required("Phone is required"),
   message: yup.string(),
 });

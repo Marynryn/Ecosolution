@@ -1,4 +1,4 @@
-import Line from 'components/Line/Line';
+
 import Logo from 'components/ui/Logo/Logo';
 import Paragraph from 'components/ui/Paragraph/Paragraph';
 import SocialIcons from 'components/ui/SocialIcons/SocialIcons';
@@ -6,12 +6,24 @@ import SvgContainer from 'components/ui/SvgContainer/SvgContainer';
 import React from 'react'
 import styled from 'styled-components';
 import { Container } from 'components/ui/Container/Container';
-
+import { Link as ScrollLink } from 'react-scroll';
+import content from 'data/common.json';
 const Box = styled.div`
 display: flex;
 justify-content: space-between;
 margin-top: 24px;
 align-items: center;
+position: relative;
+::before{
+    content: '';
+    position: absolute;
+    top: -24px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+}
 @media (min-width: 768px) {
     display: grid;
     grid-template-columns:  1fr 1fr;
@@ -23,15 +35,16 @@ gap: 300px;
 }
 `;
 
-const Button = styled.button`
+const Button = styled(ScrollLink)`
 padding: 0;
-display: flex;
+display: inline-flex;
 height: 32px;
 width: 32px;
 border: none;
 background-color: var(--accent-color);
 border-radius: 100px;
-   &:hover{
+transition: all 300ms ease-in-out;
+   &:hover, &:focus{
     background-color: var(--main-color);
     svg{
         stroke: var(--accent-color);
@@ -93,12 +106,18 @@ const Footer = ({ scrollToMain }) => {
     return (
         <footer>
             <Container>
-                <Line />
+
                 <Box>
                     <Logo />
                     <ContainerBox>
-                        <BoxIcon> <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} /></BoxIcon>
-                        <Button type='button' onClick={scrollToMain}>
+                        <BoxIcon>
+                            <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} /></BoxIcon>
+                        <Button to={content.footer.href} role="link"
+                            smooth={true}
+                            offset={-150}
+                            duration={500}
+
+                            tabIndex={0}>
                             <SvgContainer svgId={"icon-arrow-top"} backgroundColor='transparent' size="16px" padding="8px" />
                         </Button>
                     </ContainerBox>
@@ -107,10 +126,10 @@ const Footer = ({ scrollToMain }) => {
                     <SocialIcons props={{ fill: "var(--main-color)", stroke: "var(--main-color)", hoverFill: "var(--accent-color)", hoverStroke: "var(--accent-color)" }} />
                 </IconBox>
                 <InfoBox>
-                    <Paragraph>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Paragraph>
+                    <Paragraph>{content.footer.address}</Paragraph>
                     <TextBox>
-                        <Paragraph>office@ecosolution.com</Paragraph>
-                        <Paragraph>ecosolution &copy; 2023</Paragraph>
+                        <Paragraph>{content.footer.email}</Paragraph>
+                        <Paragraph>{content.footer.copyright}</Paragraph>
                     </TextBox>
                 </InfoBox>
             </Container>

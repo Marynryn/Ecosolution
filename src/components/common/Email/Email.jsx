@@ -9,12 +9,13 @@ const StyledSvg = styled.svg`
   height: 24px;
   stroke: var(--main-color);
   fill: transparent;
-  &:hover {
+  transition: all 300ms ease-in-out;
+  &:hover, &:focus {
     stroke: var(--accent-color);
   }
 `;
 const EmailLink = styled.a`
-  display: flex;
+  display: inline-flex;
   gap: 8px;
   align-items: center;
   text-decoration: none;
@@ -34,7 +35,8 @@ const Email = () => {
   return (
     <Box >
       <Paragraph>{content.email.title}</Paragraph>
-      <EmailLink href={content.email.href}>
+      <EmailLink href={content.email.href} target="_blank"
+        rel="noopener noreferrer nofollow">
         <StyledSvg>
           <use href={`${sprite}#icon-sms`} />
         </StyledSvg>

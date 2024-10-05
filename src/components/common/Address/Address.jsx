@@ -3,18 +3,19 @@ import React from 'react';
 import sprite from "svg/symbol-defs.svg";
 import Paragraph from 'components/ui/Paragraph/Paragraph';
 import styled from 'styled-components';
-
+import content from 'data/contact.json';
 const StyledSvg = styled.svg`
   width: 24px;
   height: 24px;
   stroke: var(--main-color);
   fill: transparent;
-  &:hover {
+  transition: all 300ms ease-in-out;
+  &:hover, &:focus {
     stroke: var(--accent-color);
   }
 `;
 const MapLink = styled.a`
-  display: flex;
+  display: inline-flex;
   gap: 8px;
   align-items: center;
   text-decoration: none;
@@ -31,12 +32,13 @@ margin-top: 16px;
 const Address = () => {
   return (
     <Box>
-      <Paragraph>Address:</Paragraph>
-      <MapLink href="https://maps.google.com/?q=79005+Ukraine+Lviv+street+Shota+Rustaveli+7" target="_blank" rel="noopener noreferrer">
+      <Paragraph>{content.address.title}</Paragraph>
+      <MapLink href={content.address.href} target="_blank"
+        rel="noopener noreferrer nofollow">
         <StyledSvg>
           <use href={`${sprite}#icon-map`} />
         </StyledSvg>
-        <Text>79005, Ukraine, Lviv, street Shota Rustaveli, 7</Text>
+        <Text>{content.address.address}</Text>
       </MapLink>
     </Box>
   );

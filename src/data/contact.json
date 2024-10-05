@@ -11,5 +11,18 @@
     "title": "Email:",
     "href": "mailto:office@ecosolution.com",
     "email": "office@ecosolution.com"
+  },
+  "address": {
+    "title": "Address:",
+    "href": "https://maps.google.com/?q=79005+Ukraine+Lviv+street+Shota+Rustaveli+7",
+    "address": "79005, Ukraine, Lviv, street Shota Rustaveli, 7"
+  },
+  "socialNetwork": "Social Networks:",
+  "form": {
+    "name": "*Full name:",
+    "email": "*Email:",
+    "phone": "*Phone:",
+    "message": "Message:",
+    "submit": "Submit"
   }
 }

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useFormik } from 'formik';
 import { schema } from 'schema/schema';
 import toast from 'react-hot-toast';
-import Line from 'components/Line/Line';
 import TransparentButton from 'components/ui/TransparentButton/TransparentButton';
-
+import content from 'data/contact.json';
 const FormContainer = styled.form`
   background-color: var(--accent-background);
   margin-top: 24px;
@@ -29,6 +28,7 @@ const Input = styled.input`
   font-style: normal;
   font-family: "Fira Sans";
   font-weight: 400;
+
   &::placeholder {
  color: var(-placeholder-color);
   }
@@ -44,6 +44,16 @@ const Input = styled.input`
 
 const InputField = styled.div`
   display: block;
+    position: relative;
+  ::after{
+    content: "";
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+        background-color: ${({ $hasError }) => $hasError ? 'var(--error-color)' : 'var(--accent-color)'};
+  }
 `;
 
 const Label = styled.label`
@@ -61,6 +71,7 @@ const TextArea = styled.textarea`
   margin: 8px 0 16px 0;
   background-color: var(--accent-background);
   height: 147px;
+ resize: none;
   font-size: 18px;
   font-style: normal;
   font-family: "Fira Sans";
@@ -93,28 +104,35 @@ const Box = styled.div`
 `;
 
 const ContactForm = () => {
+    const initialValues = {
+        fullName: localStorage.getItem('fullName') || '',
+        email: localStorage.getItem('email') || '',
+        phone: localStorage.getItem('phone') || '',
+        message: localStorage.getItem('message') || '',
+    };
     const formik = useFormik({
-        initialValues: {
-            fullName: '',
-            email: '',
-            phone: '',
-            message: '',
-        },
+        initialValues: initialValues,
         validationSchema: schema,
         onSubmit: (values, { resetForm }) => {
             try {
                 toast.success('Form submitted successfully!');
+                localStorage.clear();
                 resetForm();
             } catch (error) {
                 toast.error('Error submitting form: ' + error.message);
             }
         }
     });
-
+    useEffect(() => {
+        localStorage.setItem('fullName', formik.values.fullName);
+        localStorage.setItem('email', formik.values.email);
+        localStorage.setItem('phone', formik.values.phone);
+        localStorage.setItem('message', formik.values.message);
+    }, [formik.values]);
     return (
         <FormContainer onSubmit={formik.handleSubmit}>
-            <InputField>
-                <Label htmlFor="fullName">*Full name:</Label>
+            <InputField $hasError={formik.touched.fullName && formik.errors.fullName} >
+                <Label htmlFor="fullName">{content.form.name}</Label>
                 <Input
                     id="fullName"
                     name="fullName"
@@ -124,14 +142,14 @@ const ContactForm = () => {
                     value={formik.values.fullName}
                     placeholder='John Rosie'
                 />
-                <Line color={formik.touched.fullName && formik.errors.fullName ? 'var(--error-color)' : null} />
+
                 {formik.touched.fullName && formik.errors.fullName ? (
                     <ErrorMessage>{formik.errors.fullName}</ErrorMessage>
                 ) : <ErrorBox></ErrorBox>}
             </InputField>
 
-            <InputField>
-                <Label htmlFor="email">*Email:</Label>
+            <InputField $hasError={formik.touched.email && formik.errors.email} >
+                <Label htmlFor="email">{content.form.email}</Label>
                 <Input
                     id="email"
                     name="email"
@@ -141,34 +159,35 @@ const ContactForm = () => {
                     value={formik.values.email}
                     placeholder='johnrosie@gmailcom'
                 />
-                <Line color={formik.touched.email && formik.errors.email ? 'var(--error-color)' : null} />
+
                 {formik.touched.email && formik.errors.email ? (
                     <ErrorMessage>{formik.errors.email}</ErrorMessage>
                 ) : <ErrorBox></ErrorBox>}
             </InputField>
 
-            <InputField>
-                <Label htmlFor="phone">*Phone:</Label>
+            <InputField $hasError={formik.touched.phone && formik.errors.phone} >
+                <Label htmlFor="phone">{content.form.phone}</Label>
                 <Input
                     id="phone"
                     name="phone"
-                    type="text"
+                    type="tel"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.phone}
                     placeholder='380961234567'
                 />
-                <Line color={formik.touched.phone && formik.errors.phone ? 'var(--error-color)' : null} />
+
                 {formik.touched.phone && formik.errors.phone ? (
                     <ErrorMessage>{formik.errors.phone}</ErrorMessage>
                 ) : <ErrorBox></ErrorBox>}
             </InputField>
 
-            <InputField>
-                <Label htmlFor="message">Message:</Label>
+            <InputField $hasError={formik.touched.message && formik.errors.message} >
+                <Label htmlFor="message">{content.form.message}</Label>
                 <TextArea
                     id="message"
                     name="message"
+
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.message}
@@ -180,7 +199,7 @@ const ContactForm = () => {
             </InputField>
             <Box>
                 <TransparentButton type="submit">
-                    Submit
+                    {content.form.submit}
                 </TransparentButton>
             </Box>
         </FormContainer>
